@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://stark-x.github.io/"/>
-  <updated>2018-07-15T10:53:02.039Z</updated>
+  <updated>2018-07-15T11:01:22.275Z</updated>
   <id>https://stark-x.github.io/</id>
   
   <author>
@@ -15,35 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Hexo博客教程.1.序</title>
-    <link href="https://stark-x.github.io/2017/09/24/hexo-blog-tutorial-1/"/>
-    <id>https://stark-x.github.io/2017/09/24/hexo-blog-tutorial-1/</id>
-    <published>2017-09-24T07:36:30.000Z</published>
-    <updated>2018-07-15T10:53:02.039Z</updated>
-    
-    <content type="html"><![CDATA[<!-- toc --><!-- Description to show on index here  --><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>本系列教程目标是阅读者可以搭建起一个自己的博客在Github Page上。<br>进阶：利用Github的Webhook功能自动在VPS上发布自己的文章。</p><h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote><p>什么是 Hexo？<br>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p></blockquote><a id="more"></a><p>关于安装以及运行在本地的细节在<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo官网</a>已经有很详尽的中文文档描述，就不复制粘贴了。<br>Windows用户需要特别注意关于“windows用户”的提示。</p><h2 id="Benefit"><a href="#Benefit" class="headerlink" title="Benefit"></a>Benefit</h2><p>使用Hexo搭建博客足够简单，学习成本很低，只需要懂得使用Markdown，就可以写博客了，而且可以随时更换主题。<br>另外，在搭建、部署方面，因为Hexo的输出为纯静态网页，任何一个支持发布静态网页的服务都可以用于发布自己的博客，当然，如果有自己的VPS，也可以部署在上面，灵活性更高。以下列出我所知道的几个可以发布静态网页的平台：</p><ul><li><a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> | 可通过<code>*.github.io</code>访问你的博客</li><li><a href="http://git.mydoc.io/?t=154714" target="_blank" rel="noopener">码云Pages</a> | 可通过<code>*.oschina.io</code>访问你的博客</li></ul><h2 id="Prior-Knoweledge"><a href="#Prior-Knoweledge" class="headerlink" title="Prior Knoweledge"></a>Prior Knoweledge</h2><p>Must:</p><ul><li>Markdown</li></ul><p>Optional:</p><ul><li>git</li><li>npm</li><li>Python / Javascript / Shell</li><li>Linux</li></ul><h2 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h2><p>下一篇将会介绍如何配置以及使用Hexo发布博文</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;!-- toc --&gt;
-&lt;!-- Description to show on index here  --&gt;
-&lt;h2 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h2&gt;&lt;p&gt;本系列教程目标是阅读者可以搭建起一个自己的博客在Github Page上。&lt;br&gt;进阶：利用Github的Webhook功能自动在VPS上发布自己的文章。&lt;/p&gt;
-&lt;h2 id=&quot;Hexo&quot;&gt;&lt;a href=&quot;#Hexo&quot; class=&quot;headerlink&quot; title=&quot;Hexo&quot;&gt;&lt;/a&gt;Hexo&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;什么是 Hexo？&lt;br&gt;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="turtorial" scheme="https://stark-x.github.io/categories/turtorial/"/>
-    
-    
-      <category term="hexo" scheme="https://stark-x.github.io/tags/hexo/"/>
-    
-      <category term="blog" scheme="https://stark-x.github.io/tags/blog/"/>
-    
-  </entry>
   
   <entry>
     <title>Hello Blog</title>
