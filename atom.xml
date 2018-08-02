@@ -49,29 +49,6 @@
   </entry>
   
   <entry>
-    <title>有趣的VIM（一）</title>
-    <link href="https://stark-x.github.io/2018/07/16/interesting-vim-1/"/>
-    <id>https://stark-x.github.io/2018/07/16/interesting-vim-1/</id>
-    <published>2018-07-16T07:27:04.000Z</published>
-    <updated>2018-08-01T03:41:54.513Z</updated>
-    
-    <content type="html"><![CDATA[<!-- toc --><!-- Description to show on index here  --><blockquote><p><strong>Vim - the ubiquitous text editor</strong><br>Vim is a highly configurable text editor for efficiently creating and changing any kind of text. It is included as “vi” with most UNIX systems and with Apple OS X.<br>Vim 是一个可用于高效率创建或者编辑任意类型文本的高度定制化的文本编辑。它以”vi”命令存在于在大多数的UNIX 操作系统以及Apple OS X 中。</p><p align="right">— <a href="https://www.vim.org/" target="_blank" rel="noopener">https://www.vim.org/</a></p></blockquote><a id="more"></a><p>Vim 作为一个上古神器，它提供了很多很神奇高效的特性，以至于在当前</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;!-- toc --&gt;
-&lt;!-- Description to show on index here  --&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Vim - the ubiquitous text editor&lt;/strong&gt;&lt;br&gt;Vim is a highly configurable text editor for efficiently creating and changing any kind of text. It is included as “vi” with most UNIX systems and with Apple OS X.&lt;br&gt;Vim 是一个可用于高效率创建或者编辑任意类型文本的高度定制化的文本编辑。它以”vi”命令存在于在大多数的UNIX 操作系统以及Apple OS X 中。&lt;/p&gt;
-&lt;p align=&quot;right&quot;&gt;— &lt;a href=&quot;https://www.vim.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.vim.org/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello Blog</title>
     <link href="https://stark-x.github.io/2017/09/18/hello-blog/"/>
     <id>https://stark-x.github.io/2017/09/18/hello-blog/</id>
