@@ -5,9 +5,9 @@
   <subtitle>Beneath this blog there is an idea</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://stark-x.github.io/"/>
+  <link href="https://blog.stark-x.cn/"/>
   <updated>2018-09-07T02:58:26.890Z</updated>
-  <id>https://stark-x.github.io/</id>
+  <id>https://blog.stark-x.cn/</id>
   
   <author>
     <name>Stark-X</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>『丢掉』鼠标</title>
-    <link href="https://stark-x.github.io/2018/09/07/remove_mouse/"/>
-    <id>https://stark-x.github.io/2018/09/07/remove_mouse/</id>
+    <link href="https://blog.stark-x.cn/2018/09/07/remove_mouse/"/>
+    <id>https://blog.stark-x.cn/2018/09/07/remove_mouse/</id>
     <published>2018-09-07T10:30:33.000Z</published>
     <updated>2018-09-07T02:58:26.890Z</updated>
     
@@ -34,21 +34,21 @@
     
     </summary>
     
-      <category term="Geek" scheme="https://stark-x.github.io/categories/Geek/"/>
+      <category term="Geek" scheme="https://blog.stark-x.cn/categories/Geek/"/>
     
     
-      <category term="Vim" scheme="https://stark-x.github.io/tags/Vim/"/>
+      <category term="Vim" scheme="https://blog.stark-x.cn/tags/Vim/"/>
     
-      <category term="Geek" scheme="https://stark-x.github.io/tags/Geek/"/>
+      <category term="Geek" scheme="https://blog.stark-x.cn/tags/Geek/"/>
     
-      <category term="Keyboard" scheme="https://stark-x.github.io/tags/Keyboard/"/>
+      <category term="Keyboard" scheme="https://blog.stark-x.cn/tags/Keyboard/"/>
     
   </entry>
   
   <entry>
     <title>『上古神器』Vim</title>
-    <link href="https://stark-x.github.io/2018/08/31/the-great-vim/"/>
-    <id>https://stark-x.github.io/2018/08/31/the-great-vim/</id>
+    <link href="https://blog.stark-x.cn/2018/08/31/the-great-vim/"/>
+    <id>https://blog.stark-x.cn/2018/08/31/the-great-vim/</id>
     <published>2018-08-31T12:00:00.000Z</published>
     <updated>2018-08-31T14:41:15.919Z</updated>
     
@@ -66,19 +66,19 @@
     
     </summary>
     
-      <category term="Tools" scheme="https://stark-x.github.io/categories/Tools/"/>
+      <category term="Tools" scheme="https://blog.stark-x.cn/categories/Tools/"/>
     
     
-      <category term="Vim" scheme="https://stark-x.github.io/tags/Vim/"/>
+      <category term="Vim" scheme="https://blog.stark-x.cn/tags/Vim/"/>
     
-      <category term="Coding" scheme="https://stark-x.github.io/tags/Coding/"/>
+      <category term="Coding" scheme="https://blog.stark-x.cn/tags/Coding/"/>
     
   </entry>
   
   <entry>
     <title>使用 kolla-ansible 部署 OpenStack</title>
-    <link href="https://stark-x.github.io/2018/08/01/Use-kolla-ansible-deploy-OpenStack/"/>
-    <id>https://stark-x.github.io/2018/08/01/Use-kolla-ansible-deploy-OpenStack/</id>
+    <link href="https://blog.stark-x.cn/2018/08/01/Use-kolla-ansible-deploy-OpenStack/"/>
+    <id>https://blog.stark-x.cn/2018/08/01/Use-kolla-ansible-deploy-OpenStack/</id>
     <published>2018-08-01T02:46:54.000Z</published>
     <updated>2018-08-31T02:42:26.953Z</updated>
     
@@ -96,14 +96,14 @@
     
     </summary>
     
-      <category term="Solutions" scheme="https://stark-x.github.io/categories/Solutions/"/>
+      <category term="Solutions" scheme="https://blog.stark-x.cn/categories/Solutions/"/>
     
     
-      <category term="Cloud" scheme="https://stark-x.github.io/tags/Cloud/"/>
+      <category term="Cloud" scheme="https://blog.stark-x.cn/tags/Cloud/"/>
     
-      <category term="OpenStack" scheme="https://stark-x.github.io/tags/OpenStack/"/>
+      <category term="OpenStack" scheme="https://blog.stark-x.cn/tags/OpenStack/"/>
     
-      <category term="Ops" scheme="https://stark-x.github.io/tags/Ops/"/>
+      <category term="Ops" scheme="https://blog.stark-x.cn/tags/Ops/"/>
     
   </entry>
   
