@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://stark-x.github.io/"/>
-  <updated>2018-08-31T14:41:15.919Z</updated>
+  <updated>2018-09-07T02:58:26.890Z</updated>
   <id>https://stark-x.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>『丢掉』鼠标</title>
+    <link href="https://stark-x.github.io/2018/09/07/remove_mouse/"/>
+    <id>https://stark-x.github.io/2018/09/07/remove_mouse/</id>
+    <published>2018-09-07T10:30:33.000Z</published>
+    <updated>2018-09-07T02:58:26.890Z</updated>
+    
+    <content type="html"><![CDATA[<!-- toc --><!-- Description to show on index here  --><p>是否有那么一刻想要丢掉鼠标？</p><p>是否想要眼睛看到哪就编辑到哪？<br><a id="more"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- toc --&gt;
+&lt;!-- Description to show on index here  --&gt;
+&lt;p&gt;是否有那么一刻想要丢掉鼠标？&lt;/p&gt;
+&lt;p&gt;是否想要眼睛看到哪就编辑到哪？&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Geek" scheme="https://stark-x.github.io/categories/Geek/"/>
+    
+    
+      <category term="Vim" scheme="https://stark-x.github.io/tags/Vim/"/>
+    
+      <category term="Geek" scheme="https://stark-x.github.io/tags/Geek/"/>
+    
+      <category term="Keyboard" scheme="https://stark-x.github.io/tags/Keyboard/"/>
+    
+  </entry>
   
   <entry>
     <title>『上古神器』Vim</title>
