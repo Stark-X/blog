@@ -5,6 +5,11 @@
 
 
 
+<!-- keywords -->
+
+
+
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
@@ -12,13 +17,12 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Stark-X">
     
-    <meta name="keywords" content="stark,technical,blog">
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta property="og:image" content="https://cn.gravatar.com/userimage/119708208/ab72ceafc178ec2629d3ddd0ff111853.png?size=300"/>
-    <title>所有归档 · Stark-X&#39;s Blog</title>
+    <title>所有归档 · fi3ework&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -190,47 +194,11 @@
     <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
     <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
     
-        <!-- algolia -->
-        <script>
-            
-            var hits = JSON.parse('{"per_page":10}')
-            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
-
-            var algolia = {
-                applicationID: 'K1YQXDVE38',
-                apiKey: 'c6406e3722b79ee948199cfde68931e8',
-                indexName: 'my-hexo-blog',
-                hits: hits,
-                labels: labels
-            }
-        </script>
-    
     <!-- fancybox -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b4324daa63fffc90868f64602c39f764";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    
     <!-- 谷歌统计  -->
-    
-    <script>
-        (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-123254244-1', 'auto');
-        ga('send', 'pageview');
-    </script>
     
 </head>
 
@@ -242,7 +210,7 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
-    <a class="home-link" href=/>Stark-X's Blog</a>
+    <a class="home-link" href=/>fi3ework's Studio.</a>
 </header>
     <div class="wrapper">
         <div class="site-intro" style="
@@ -396,21 +364,6 @@
     <!-- 评论插件 -->
     <!-- 来必力City版安装代码 -->
 
-    <div id="lv-container" data-id="city" data-uid= MTAyMC8zODU2MC8xNTA4OA==>
-        <script type="text/javascript">
-            (function (d, s) {
-                var j, e = d.getElementsByTagName(s)[0];
-                if (typeof LivereTower === 'function') { return; }
-                j = d.createElement(s);
-                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                j.async = true;
-
-                e.parentNode.insertBefore(j, e);
-            })(document, 'script');
-        </script>
-        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
-
 <!-- City版安装代码已完成 -->
     
     
@@ -434,47 +387,22 @@
     
         
             
-                <a href="mailto:&#000120;&#0000105;&#0000097;&#x00006f;&#x00006a;&#105;&#101;&#122;&#104;&#105;&#050;&#0064;&#00103;&#000109;&#97;&#0000105;&#00000108;&#46;&#99;&#00000111;&#x6d;" class="iconfont-archer email" title=email ></a>
+                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
             
         
     
         
             
-                <a href="//github.com/Stark-X" class="iconfont-archer github" target="_blank" title=github></a>
+                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
             
         
     
         
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
             
-                <a href="https://stackoverflow.com/users/8318455/stark" class="iconfont-archer stack-overflow" target="_blank" title=stack-overflow></a>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.v2ex.com/member/StarkXiao" class="iconfont-archer v2ex" target="_blank" title=v2ex></a>
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png" />
+                </span>
             
         
     
@@ -487,9 +415,29 @@
         
     
         
-            
-                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
-            
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
         
     
 
@@ -555,10 +503,6 @@
         </div>
         <!-- search  -->
         
-            <div class="site-search popup-trigger">
-                <span class="iconfont-archer search-icon">&#xe627;</span>
-            </div>
-        
     </div>
     
     <div class="post-archive">
@@ -589,17 +533,17 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Cloud"><span class="iconfont-archer">&#xe606;</span>Cloud</span>
-    
-        <span class="sidebar-tag-name" data-tags="OpenStack"><span class="iconfont-archer">&#xe606;</span>OpenStack</span>
-    
-        <span class="sidebar-tag-name" data-tags="Ops"><span class="iconfont-archer">&#xe606;</span>Ops</span>
-    
         <span class="sidebar-tag-name" data-tags="Vim"><span class="iconfont-archer">&#xe606;</span>Vim</span>
     
         <span class="sidebar-tag-name" data-tags="Geek"><span class="iconfont-archer">&#xe606;</span>Geek</span>
     
         <span class="sidebar-tag-name" data-tags="Keyboard"><span class="iconfont-archer">&#xe606;</span>Keyboard</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cloud"><span class="iconfont-archer">&#xe606;</span>Cloud</span>
+    
+        <span class="sidebar-tag-name" data-tags="OpenStack"><span class="iconfont-archer">&#xe606;</span>OpenStack</span>
+    
+        <span class="sidebar-tag-name" data-tags="Ops"><span class="iconfont-archer">&#xe606;</span>Ops</span>
     
         <span class="sidebar-tag-name" data-tags="Coding"><span class="iconfont-archer">&#xe606;</span>Coding</span>
     
@@ -636,9 +580,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Solutions"><span class="iconfont-archer">&#xe60a;</span>Solutions</span>
-    
         <span class="sidebar-category-name" data-categories="Geek"><span class="iconfont-archer">&#xe60a;</span>Geek</span>
+    
+        <span class="sidebar-category-name" data-categories="Solutions"><span class="iconfont-archer">&#xe60a;</span>Solutions</span>
     
         <span class="sidebar-category-name" data-categories="Tools"><span class="iconfont-archer">&#xe60a;</span>Tools</span>
     
@@ -665,29 +609,6 @@ jsonContent:
     </script>
     <script src="/scripts/main.js"></script>
     <!-- algolia -->
-    
-        <div class="site-search">
-  <div class="algolia-popup popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="iconfont-archer">&#xe609;</i>
-    </span>
-  </div>
-</div>
-        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
-        <script src="/scripts/search.js" defer></script>
     
     <!-- busuanzi  -->
     
