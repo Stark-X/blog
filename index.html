@@ -10,9 +10,9 @@
 
 
 
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Stark-X">
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Stark-X">
@@ -21,7 +21,7 @@
     
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Stark-X&#39;s Blog</title>
     <style type="text/css">
     @font-face {
@@ -75,8 +75,8 @@
 
 </style>
 
-    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -185,12 +185,12 @@
 }( typeof global !== "undefined" ? global : this ) );
 </script>
 
-    <link rel="icon" href= "/assets/favicon.ico" />
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
-    <link rel="preload" href="/scripts/main.js" as="script" />
-    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
-    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
     
         <!-- algolia -->
         <script>
@@ -246,7 +246,7 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
-    <a class="home-link" href=/>Stark-X's Blog</a>
+    <a class="home-link" href="/">Stark-X's Blog</a>
 </header>
     <div class="wrapper">
         <div class="site-intro" style="
@@ -395,31 +395,34 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/31/the-great-vim/" >
+        <a class="abstract-title" href="/2018/11/14/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox/">
             
-                <span>『上古神器』Vim</span>
+                <span>使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群</span>
         </a>
         <div class="abstract-content">
             <!-- toc -->
 <!-- Description to show on index here  -->
-<blockquote>
-<p><strong>Vim - the ubiquitous text editor</strong><br>Vim is a highly configurable text editor for efficiently creating and changing any kind of text. It is included as “vi” with most UNIX systems and with Apple OS X.<br>Vim 是一个可用于高效率创建或者编辑任意类型文本的高度定制化的文本编辑。它以”vi”命令存在于在大多数的UNIX 操作系统以及Apple OS X 中。</p>
-<p align="right">— <a href="https://www.vim.org/" target="_blank" rel="noopener">https://www.vim.org/</a></p>
-</blockquote>
-<p>Vim 作为一个“上古”编辑器，它提供了很多很神奇高效的特性，以至于在现代编辑器/强大的IDE的选择之中有一席之地。<br>Vim有一个很合我心意的特性，在使用它的时候，完全不需要使用鼠标，眼睛看到哪就可以编辑哪，现在能支持Vim特性的地方我都安装上了对应的插件，例如Chrome的插件：Vimium, Idea的插件：Ideavim。<br>
-        </div>
+<p>在前一阵子参加了DevOps国际峰会(DevOps International Summit)，《DevOps Handbook》和《Beyond The Phoenix Project》的联合作者 John Willis 在他的分享中提出了“Kubernetes将成为未来的主流”，再加上我所在公司有大量的微服务架构项目使用到了Kubernetes，遂开始学习Kubernetes。<br>那要去学习它就必须得有可操作环境，在<a href="https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions" target="_blank" rel="noopener">Kubernetes官网</a>提供了好多个解决方案。</p>
+<p>我选择了难度稍高的 kubeadm 配合由 Vagrant 以及 Virtualbox 搭建的虚拟机创建 Kubernetes 的集群，通过使用 kubeadm 熟悉 Kubernetes 的部署流程以及它的原理。</p>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><ul>
+<li>启动两个虚拟机，一个作为主节点，一个作为工作节点</li>
+<li>熟悉 Kubeadm</li>
+<li>在集群上部署Kubernetes-dashboard、nginx
+        </li></ul></div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/31</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/14</span>
             </div>
             <!-- tags  -->
             
-            <div class= abstract-tags >
+            <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Vim">Vim</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Ops">Ops</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Coding">Coding</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Kubernetes">Kubernetes</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Vagrant">Vagrant</a>
     
 </div>
             
@@ -432,7 +435,44 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/01/Use-kolla-ansible-deploy-OpenStack/" >
+        <a class="abstract-title" href="/2018/08/31/the-great-vim/">
+            
+                <span>『上古神器』Vim</span>
+        </a>
+        <div class="abstract-content">
+            <!-- toc -->
+<!-- Description to show on index here  -->
+<blockquote>
+<p><strong>Vim - the ubiquitous text editor</strong><br>Vim is a highly configurable text editor for efficiently creating and changing any kind of text. It is included as “vi” with most UNIX systems and with Apple OS X.<br>Vim 是一个可用于高效率创建或者编辑任意类型文本的高度定制化的文本编辑。它以”vi”命令存在于在大多数的UNIX 操作系统以及Apple OS X 中。</p>
+<p align="right">— <a href="https://www.vim.org/" target="_blank" rel="noopener">https://www.vim.org/</a></p>
+</blockquote>
+<p>Vim 作为一个“上古”编辑器，它提供了很多很神奇高效的特性，以至于在现代编辑器/强大的IDE的选择之中有一席之地。<br>Vim有一个很合我心意的特性，在使用它的时候，完全不需要使用鼠标，眼睛看到哪就可以编辑哪，现在能支持Vim特性的地方我都安装上了对应的插件，例如Chrome的插件：Vimium, Idea的插件：Ideavim。<br>
+        </p></div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/31</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Vim">Vim</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Coding">Coding</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/08/01/Use-kolla-ansible-deploy-OpenStack/">
             
                 <span>使用 kolla-ansible 部署 OpenStack</span>
         </a>
@@ -452,13 +492,13 @@ height:50vh;
             </div>
             <!-- tags  -->
             
-            <div class= abstract-tags >
+            <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Cloud">Cloud</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Cloud">Cloud</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenStack">OpenStack</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="OpenStack">OpenStack</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Ops">Ops</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Ops">Ops</a>
     
 </div>
             
@@ -471,7 +511,7 @@ height:50vh;
             <!-- profile -->
             
             <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= https://cn.gravatar.com/userimage/119708208/ab72ceafc178ec2629d3ddd0ff111853.png?size=300 >
+    <img class="profile-avatar" alt="avatar" src="https://cn.gravatar.com/userimage/119708208/ab72ceafc178ec2629d3ddd0ff111853.png?size=300">
     <div class="profile-name">Stark-X</div>
     
     <div class="profile-signature">
@@ -484,47 +524,13 @@ height:50vh;
     
         
             
-                <a href="mailto:&#000120;&#0000105;&#0000097;&#x00006f;&#x00006a;&#105;&#101;&#122;&#104;&#105;&#050;&#0064;&#00103;&#000109;&#97;&#0000105;&#00000108;&#46;&#99;&#00000111;&#x6d;" class="iconfont-archer email" title=email ></a>
+                <a href="mailto:&#000120;&#0000105;&#0000097;&#x00006f;&#x00006a;&#105;&#101;&#122;&#104;&#105;&#050;&#0064;&#00103;&#000109;&#97;&#0000105;&#00000108;&#46;&#99;&#00000111;&#x6d;" class="iconfont-archer email" title="email"></a>
             
         
     
         
             
-                <a href="//github.com/Stark-X" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://stackoverflow.com/users/8318455/stark" class="iconfont-archer stack-overflow" target="_blank" title=stack-overflow></a>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.v2ex.com/member/StarkXiao" class="iconfont-archer v2ex" target="_blank" title=v2ex></a>
+                <a href="//github.com/Stark-X" class="iconfont-archer github" target="_blank" title="github"></a>
             
         
     
@@ -537,8 +543,42 @@ height:50vh;
         
     
         
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
             
-                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
+                <a href="https://stackoverflow.com/users/8318455/stark" class="iconfont-archer stack-overflow" target="_blank" title="stack-overflow"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.v2ex.com/member/StarkXiao" class="iconfont-archer v2ex" target="_blank" title="v2ex"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title="rss"></a>
             
         
     
@@ -551,13 +591,13 @@ height:50vh;
             
                 
                     <span>
-                        <a href= //blog.linesh.tw target="_black">Linesh</a>
+                        <a href="//blog.linesh.tw" target="_black">Linesh</a>
                     </span>
                 
             
                 
                     <span>
-                        <a href= //www.google.com target="_black">friendB</a>
+                        <a href="//www.google.com" target="_black">friendB</a>
                     </span>
                 
             
@@ -567,7 +607,7 @@ height:50vh;
     
     
         <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
+            <a href="/about">ABOUT ME</a>
         </div>
     
 </div>
@@ -581,47 +621,13 @@ height:50vh;
     
         
             
-                <a href="mailto:&#000120;&#0000105;&#0000097;&#x00006f;&#x00006a;&#105;&#101;&#122;&#104;&#105;&#050;&#0064;&#00103;&#000109;&#97;&#0000105;&#00000108;&#46;&#99;&#00000111;&#x6d;" class="iconfont-archer email" title=email ></a>
+                <a href="mailto:&#000120;&#0000105;&#0000097;&#x00006f;&#x00006a;&#105;&#101;&#122;&#104;&#105;&#050;&#0064;&#00103;&#000109;&#97;&#0000105;&#00000108;&#46;&#99;&#00000111;&#x6d;" class="iconfont-archer email" title="email"></a>
             
         
     
         
             
-                <a href="//github.com/Stark-X" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://stackoverflow.com/users/8318455/stark" class="iconfont-archer stack-overflow" target="_blank" title=stack-overflow></a>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.v2ex.com/member/StarkXiao" class="iconfont-archer v2ex" target="_blank" title=v2ex></a>
+                <a href="//github.com/Stark-X" class="iconfont-archer github" target="_blank" title="github"></a>
             
         
     
@@ -634,8 +640,42 @@ height:50vh;
         
     
         
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
             
-                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
+                <a href="https://stackoverflow.com/users/8318455/stark" class="iconfont-archer stack-overflow" target="_blank" title="stack-overflow"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.v2ex.com/member/StarkXiao" class="iconfont-archer v2ex" target="_blank" title="v2ex"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title="rss"></a>
             
         
     
@@ -687,9 +727,20 @@ height:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 2
+        Total : 3
         </div>
         <!-- search  -->
         
@@ -709,15 +760,20 @@ height:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/31</span><a class="archive-post-title" href= "/2018/08/31/the-great-vim/" >『上古神器』Vim</a>
+            <span class="archive-post-date">11/14</span><a class="archive-post-title" href="/2018/11/14/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox/">使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2018/08/01/Use-kolla-ansible-deploy-OpenStack/" >使用 kolla-ansible 部署 OpenStack</a>
+            <span class="archive-post-date">08/31</span><a class="archive-post-title" href="/2018/08/31/the-great-vim/">『上古神器』Vim</a>
         </li>
     
-    </div>
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href="/2018/08/01/Use-kolla-ansible-deploy-OpenStack/">使用 kolla-ansible 部署 OpenStack</a>
+        </li>
+    
+    </ul></div>
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
@@ -734,15 +790,19 @@ height:50vh;
     
         <span class="sidebar-tag-name" data-tags="Ops"><span class="iconfont-archer">&#xe606;</span>Ops</span>
     
+        <span class="sidebar-tag-name" data-tags="Kubernetes"><span class="iconfont-archer">&#xe606;</span>Kubernetes</span>
+    
+        <span class="sidebar-tag-name" data-tags="Vagrant"><span class="iconfont-archer">&#xe606;</span>Vagrant</span>
+    
         <span class="sidebar-tag-name" data-tags="Coding"><span class="iconfont-archer">&#xe606;</span>Coding</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br/>
-    1、请确保node版本大于6.2<br/>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
     3、在根目录_config.yml里添加配置：
     <pre style="color: #787878; font-size: 0.6rem;">
 jsonContent:
@@ -824,7 +884,7 @@ jsonContent:
     
     <!-- busuanzi  -->
     
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
     <!-- CNZZ  -->
     
