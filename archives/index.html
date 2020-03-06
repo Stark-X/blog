@@ -382,6 +382,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2020/03/06/shell-value-too-great-for-base-error-token-is-08/">
+            
+                <span>shell - value too great for base (error token is &#34;08&#34;)</span>
+        </a>
+        <div class="abstract-content">
+            <!-- toc -->
+<!-- Description to show on index here  -->
+<p>在 shell 脚本编写时，有时候需要进行数学运算（例子🌰：<code>$((1 + 1))</code>），特殊情况下，输入的数字是带着 0 前序的，当对这个带着 0 前序的数字进行数学运算时，计算结果会与预想中的不一致，或者直接报错，错误信息如<code>value too great for base (error token is &quot;02&quot;)</code></p>
+<p>那是因为 bash 执行 shell script 时，0 前缀的数字被认为是 8 进制的数字，经过测试，zsh 里不会报错，数字“09”还是被认为是十进制的“9”。</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="疑难杂症">疑难杂症</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/03/04/local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox-tldr/">
             
                 <span>使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群 - TL;DR</span>
@@ -672,9 +706,18 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 4
+        Total : 5
         </div>
         <!-- search  -->
         
@@ -688,6 +731,20 @@
     
     
     
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2020/03/06/shell-value-too-great-for-base-error-token-is-08/">shell - value too great for base (error token is "08")</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
@@ -738,6 +795,10 @@
     
         <span class="sidebar-tag-name" data-tags="Ops"><span class="iconfont-archer">&#xe606;</span>Ops</span>
     
+        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="疑难杂症"><span class="iconfont-archer">&#xe606;</span>疑难杂症</span>
+    
         <span class="sidebar-tag-name" data-tags="Kubernetes"><span class="iconfont-archer">&#xe606;</span>Kubernetes</span>
     
         <span class="sidebar-tag-name" data-tags="Vagrant"><span class="iconfont-archer">&#xe606;</span>Vagrant</span>
@@ -780,6 +841,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="Geek"><span class="iconfont-archer">&#xe60a;</span>Geek</span>
     
         <span class="sidebar-category-name" data-categories="Solutions"><span class="iconfont-archer">&#xe60a;</span>Solutions</span>
+    
+        <span class="sidebar-category-name" data-categories="troubleshoot"><span class="iconfont-archer">&#xe60a;</span>troubleshoot</span>
     
         <span class="sidebar-category-name" data-categories="Tools"><span class="iconfont-archer">&#xe60a;</span>Tools</span>
     
