@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.stark-x.cn/"/>
-  <updated>2020-03-06T15:56:16.910Z</updated>
+  <updated>2020-03-10T00:52:00.000Z</updated>
   <id>https://blog.stark-x.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 Mockito mock 类的一部分 [译]</title>
+    <link href="https://blog.stark-x.cn/2020/03/10/Using-Mockito-to-partially-mock-a-class/"/>
+    <id>https://blog.stark-x.cn/2020/03/10/Using-Mockito-to-partially-mock-a-class/</id>
+    <published>2020-03-10T00:49:08.000Z</published>
+    <updated>2020-03-10T00:52:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<!-- Description to show on index here  --><p>原文：<a href="https://medium.com/@sudarshan_sreenivasan/using-mockito-to-partially-mock-a-class-bf0be6c33dcc" target="_blank" rel="noopener">Using Mockito to partially mock a class</a><br>作者：<a href="https://medium.com/@sudarshan_sreenivasan" target="_blank" rel="noopener">Sudarshan</a></p><p>有时候，我们需要 mock 一个类的其中一些方法，其它的方法保持 un-mocked。</p><p>接下来，我会告诉你如何使用 Mockito 的 <code>mock</code> 或者 <code>spy</code> 去完成这件事。<br><a id="more"></a></p><p>假设我们有下面这个名为 <em>Stock</em> 的类</p><figure class="highlight java"><figcaption><span>Stock.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Stock</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">double</span> price;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> quantity;</span><br><span class="line"></span><br><span class="line">  Stock(<span class="keyword">double</span> price, <span class="keyword">int</span> quantity) &#123;</span><br><span class="line">    <span class="keyword">this</span>.price = price;</span><br><span class="line">    <span class="keyword">this</span>.quantity = quantity;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> price;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getQuantity</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> quantity;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getPrice() * getQuantity();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如果你想 mock 大多数的方法，而其中一小部分还是提供真正的实现，我们可以使用<code>mock</code>方法。</p><figure class="highlight java"><figcaption><span>UseMock.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Stock stock = mock(Stock.class);</span><br><span class="line">when(stock.getPrice()).thenReturn(<span class="number">100.00</span>);    <span class="comment">// Mock implementation</span></span><br><span class="line">when(stock.getQuantity()).thenReturn(<span class="number">200</span>);    <span class="comment">// Mock implementation</span></span><br><span class="line">when(stock.getValue()).thenCallRealMethod();  <span class="comment">// Real implementation</span></span><br></pre></td></tr></table></figure><p>反过来，如果你想保持大多数的方法使用真正的实现，只 mock 其中一小部分的方法，我们可以使用<code>spy</code>方法。</p><figure class="highlight java"><figcaption><span>UseSpy.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Stock stock = spy(Stock.class);</span><br><span class="line">doReturn(<span class="number">100.00</span>).when(stock).getPrice();    <span class="comment">// Mock implementation</span></span><br><span class="line">doReturn(<span class="number">200</span>).when(stock).getQuantity();    <span class="comment">// Mock implementation</span></span><br><span class="line"><span class="comment">// All other method call will use the real implementations</span></span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>Mockito::mock</strong> 一般用于对调用打桩，也就是对各种方法覆盖返回特定的值，跟其它的“mock”库非常类似。</p><p><strong>Mockito::spy</strong>，只 mock 一个对象的部分方法，其余部分保持不变，调用时使用原有的实现。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- Description to show on index here  --&gt;
+&lt;p&gt;原文：&lt;a href=&quot;https://medium.com/@sudarshan_sreenivasan/using-mockito-to-partially-mock-a-class-bf0be6c33dcc&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Using Mockito to partially mock a class&lt;/a&gt;&lt;br&gt;作者：&lt;a href=&quot;https://medium.com/@sudarshan_sreenivasan&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Sudarshan&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有时候，我们需要 mock 一个类的其中一些方法，其它的方法保持 un-mocked。&lt;/p&gt;
+&lt;p&gt;接下来，我会告诉你如何使用 Mockito 的 &lt;code&gt;mock&lt;/code&gt; 或者 &lt;code&gt;spy&lt;/code&gt; 去完成这件事。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Develop" scheme="https://blog.stark-x.cn/categories/Develop/"/>
+    
+    
+      <category term="翻译" scheme="https://blog.stark-x.cn/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="java" scheme="https://blog.stark-x.cn/tags/java/"/>
+    
+      <category term="mock" scheme="https://blog.stark-x.cn/tags/mock/"/>
+    
+  </entry>
   
   <entry>
     <title>shell - value too great for base (error token is &quot;08&quot;)</title>
