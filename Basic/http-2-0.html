@@ -311,7 +311,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">4.1k</span>阅读时长: <span class="post-count reading-time">14 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">4k</span>阅读时长: <span class="post-count reading-time">14 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -556,13 +556,12 @@ height:50vh;
 <li>包含所需要推送的资源的 HTTP Headers</li>
 <li>被发送的对象必须确保是可被缓存的</li>
 <li><code>PUSH_PROMISE</code> 帧使用对应的请求的流的 ID 构造响应的 <code>PUSH_PROMISE</code> 帧</li>
-<li><code>PUSH_PROMISE</code> 帧会声明接下来发送的响应（推送的资源）所使用的的流的 ID （都为偶数）[^ 响应的流的 ID都为偶数]</li>
+<li><code>PUSH_PROMISE</code> 帧会声明接下来发送的响应（推送的资源）所使用的的流的 ID （都为偶数）<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></li>
 <li>方法必须是幂等的，即请求不能为 POST 这种，可能改变服务端资源状态的方法</li>
 </ul>
-<p>[^ 响应的流的 ID都为偶数]: 客户端的流从 1 开始，之后每个新的流都使用加 2 之后的 ID，即都是奇数。而服务端主动推送的流的 ID 从 2 开始，之后每个新的推送的流都使用加 2 之后的 ID，即都是偶数。这样的处理可以让双方判断哪些流是由服务端推送的。0 是保留的流 ID，用于连接级的控制消息。</p>
 <h3 id="标头（Header）压缩">标头（Header）压缩</h3>
 <p>每个 HTTP 请求都有一组标头，指明了传输的资源及其属性，在 HTTP/1.x 中，标头都是纯文本，以回车换行符（<code>CRLF</code>）分割，这些元数据通常会给使得实际传输的数据增加 500-800 字节，如果包含了 cookies，则有时候会增加上千字节。</p>
-<p>为了减少这个开销，HTTP/2 使用了 <code>HPACK</code> <sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>压缩格式对请求 / 响应的标头进行压缩，这种压缩格式采用了两种简单但是强大的技术手段：</p>
+<p>为了减少这个开销，HTTP/2 使用了 <code>HPACK</code> <sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>压缩格式对请求 / 响应的标头进行压缩，这种压缩格式采用了两种简单但是强大的技术手段：</p>
 <ol>
 <li>通过静态[[霍夫曼编码（huffman coding）]]对标头进行编码，从而减少了数据量</li>
 <li>通过要求客户端、服务端同时维护一个包含了之前使用过的标头字段的索引列表，减少了冗余的标头字段传输</li>
@@ -601,7 +600,9 @@ height:50vh;
 </li>
 <li id="fn3" class="footnote-item"><p><em>流控制</em>是一种阻止发送方向接收方发送大量数据的机制，以免超出后者的需求或处理能力：发送方可能非常繁忙、处于较高的负载之下，也可能仅仅希望为特定数据流分配固定量的资源。 例如，客户端可能请求了一个具有较高优先级的大型视频流，但是用户已经暂停视频，客户端现在希望暂停或限制从服务器的传输，以免提取和缓冲不必要的数据。更多内容，请参阅 [[流控制（Flow Control）]] <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p>HPACK 是种表查找压缩方案，它利用霍夫曼编码获得接近 <code>GZIP</code> 的压缩率。 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+<li id="fn4" class="footnote-item"><p>客户端的流从 1 开始，之后每个新的流都使用加 2 之后的 ID，即都是奇数。而服务端主动推送的流的 ID 从 2 开始，之后每个新的推送的流都使用加 2 之后的 ID，即都是偶数。这样的处理可以让双方判断哪些流是由服务端推送的。0 是保留的流 ID，用于连接级的控制消息。 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>HPACK 是种表查找压缩方案，它利用霍夫曼编码获得接近 <code>GZIP</code> 的压缩率。 <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
@@ -613,7 +614,7 @@ height:50vh;
             <p>原文作者：<a href="https://blog.stark-x.cn">Stark-X</a>
             <p>原文链接：<a href="https://blog.stark-x.cn/Basic/http-2-0.html">https://blog.stark-x.cn/Basic/http-2-0.html</a>
             <p>发表日期：<a href="https://blog.stark-x.cn/Basic/http-2-0.html">July 3rd 2020, 6:00:58 pm</a>
-            <p>更新日期：<a href="https://blog.stark-x.cn/Basic/http-2-0.html">July 3rd 2020, 6:12:13 pm</a>
+            <p>更新日期：<a href="https://blog.stark-x.cn/Basic/http-2-0.html">July 3rd 2020, 9:47:08 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
