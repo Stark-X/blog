@@ -10,18 +10,18 @@
 
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
     <meta name="author" content="Stark-X">
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Stark-X">
     
-    <meta name="keywords" content="kubernetes,k8s,vagrant,route,network,hexo,stark-x,blog,博客,hexo-blog">
+    <meta name="keywords" content="kubernetes,k8s,vagrant,route,network,stark-x,blog,博客,hexo-blog,技术">
     
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群 · Stark-X&#39;s Blog</title>
     <style type="text/css">
     @font-face {
@@ -75,10 +75,10 @@
 
 </style>
 
-    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -187,12 +187,12 @@
 }( typeof global !== "undefined" ? global : this ) );
 </script>
 
-    <link rel="icon" href="/assets/favicon.ico">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
-    <link rel="preload" href="/scripts/main.js" as="script">
-    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
-    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
     
         <!-- algolia -->
         <script>
@@ -236,6 +236,7 @@
         ga('send', 'pageview');
     </script>
     
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Stark-X's Blog" type="application/atom+xml">
 </head>
 
     
@@ -250,14 +251,14 @@
     
     <div class="banner">
             <div class="blog-title">
-                <a href="/">Stark-X&#39;s Blog</a>
+                <a href="/" >Stark-X&#39;s Blog</a>
             </div>
             <div class="post-title">
                 <a href="#" class="post-name">使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群</a>
             </div>
     </div>
     
-    <a class="home-link" href="/">Stark-X's Blog</a>
+    <a class="home-link" href=/>Stark-X's Blog</a>
 </header>
     <div class="wrapper">
         <div class="site-intro" style="
@@ -300,19 +301,19 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
-                    <div class="post-intro-tags">
+                    <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Ops">Ops</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Ops">Ops</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Kubernetes">Kubernetes</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Kubernetes">Kubernetes</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Vagrant">Vagrant</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Vagrant">Vagrant</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">3,973</span>阅读时长: <span class="post-count reading-time">17 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">3.9k</span>阅读时长: <span class="post-count reading-time">16 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -443,67 +444,80 @@ height:50vh;
     <article class="article-entry">
         <!-- toc -->
 <!-- Description to show on index here  -->
-<p>在前一阵子参加了DevOps国际峰会(DevOps International Summit)，《DevOps Handbook》和《Beyond The Phoenix Project》的联合作者 John Willis 在他的分享中提出了“Kubernetes将成为未来的主流”，再加上我所在公司有大量的微服务架构项目使用到了Kubernetes，遂开始学习Kubernetes。<br>那要去学习它就必须得有可操作环境，在<a href="https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions" target="_blank" rel="noopener">Kubernetes官网</a>提供了好多个解决方案。</p>
+<p>在前一阵子参加了DevOps国际峰会(DevOps International Summit)，《DevOps Handbook》和《Beyond The Phoenix Project》的联合作者 John Willis 在他的分享中提出了“Kubernetes将成为未来的主流”，再加上我所在公司有大量的微服务架构项目使用到了Kubernetes，遂开始学习Kubernetes。
+那要去学习它就必须得有可操作环境，在<a href="https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions" target="_blank" rel="noopener">Kubernetes官网</a>提供了好多个解决方案。</p>
 <p>我选择了难度稍高的 kubeadm 配合由 Vagrant 以及 Virtualbox 搭建的虚拟机创建 Kubernetes 的集群，通过使用 kubeadm 熟悉 Kubernetes 的部署流程以及它的原理。</p>
-<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><ul>
+<h1>目标</h1>
+<ul>
 <li>启动两个虚拟机，一个作为主节点，一个作为工作节点</li>
 <li>熟悉 Kubeadm</li>
-<li>在集群上部署Kubernetes-dashboard、nginx<a id="more"></a>
-</li>
+<li>在集群上部署Kubernetes-dashboard、nginx</li>
 </ul>
-<h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><p>我使用MacOS作为运行环境写的这篇文章，在其它操作系统上进行操作可能会有一点不一样。另外，因为 Kubernetes 的镜像在谷歌的服务器，总所周知的原因，请先架好梯子，否则会出现下载不了镜像等“正常”现象。<br><em><small>梯子方面优先选择付费服务，可以减少你大量的工作。</small></em></p>
-<h2 id="编写-Vagrantfile"><a href="#编写-Vagrantfile" class="headerlink" title="编写 Vagrantfile"></a>编写 Vagrantfile</h2><p>要在本地建立集群，那就先建两个虚拟机吧，这两个虚拟机配置、设定上应该是基本一致的，那就使用 Vagrant 做初始化，环境配置。使用 Vagrant 的一大好处是只需要一份<code>Vagrantfile</code>就可以保证使用它建立起来的虚拟机是一致的，并且自动地把下载镜像、初始化、配置等等全做好了。</p>
+<a id="more"></a>
+<h1>开工</h1>
+<p>我使用MacOS作为运行环境写的这篇文章，在其它操作系统上进行操作可能会有一点不一样。另外，因为 Kubernetes 的镜像在谷歌的服务器，总所周知的原因，请先架好梯子，否则会出现下载不了镜像等“正常”现象。
+<em><small>梯子方面优先选择付费服务，可以减少你大量的工作。</small></em></p>
+<h2 id="编写-Vagrantfile">编写 Vagrantfile</h2>
+<p>要在本地建立集群，那就先建两个虚拟机吧，这两个虚拟机配置、设定上应该是基本一致的，那就使用 Vagrant 做初始化，环境配置。使用 Vagrant 的一大好处是只需要一份<code>Vagrantfile</code>就可以保证使用它建立起来的虚拟机是一致的，并且自动地把下载镜像、初始化、配置等等全做好了。</p>
 <p>既然是个集群，那它们之间应该可以相互通讯，需要配置一个私有网络；另外，Vagrant 默认创建的网络是 NAT 模式，那要有端口映射，预留端口 10000-&gt;80(master)，10001-&gt;80(node)；根据<a href="https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#before-you-begin" target="_blank" rel="noopener">官网的介绍</a>，所有节点推荐使用至少2核CPU，2G内存；同样根据<a href="https://kubernetes.io/docs/setup/independent/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl" target="_blank" rel="noopener">官方文档</a>，需要安装 kubelet，kubectl，kubeadm，docker。根据这些条件，就有了下面的<code>Vagrantfile</code>。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">$script = <span class="string">&lt;&lt;-SCRIPT</span></span><br><span class="line"><span class="string">echo "Update and install the kubeadm"</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">apt-get update &amp;&amp; apt-get install -y apt-transport-https curl</span></span><br><span class="line"><span class="string">curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -</span></span><br><span class="line"><span class="string">cat &lt;&lt;EOF &gt;/etc/apt/sources.list.d/kubernetes.list</span></span><br><span class="line"><span class="string">deb https://apt.kubernetes.io/ kubernetes-xenial main</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install -y kubelet kubeadm kubectl docker.io</span><br><span class="line">apt-mark hold kubelet kubeadm kubectl</span><br><span class="line">usermod -aG docker vagrant</span><br><span class="line">kubeadm config images pull</span><br><span class="line">SCRIPT</span><br><span class="line"></span><br><span class="line">Vagrant.configure(<span class="string">"2"</span>) <span class="keyword">do</span> <span class="params">|config|</span></span><br><span class="line">  config.vm.provider <span class="string">"virtualbox"</span> <span class="keyword">do</span> <span class="params">|v|</span></span><br><span class="line">    v.memory = <span class="number">2048</span></span><br><span class="line">    v.cpus = <span class="number">2</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  </span><br><span class="line">  config.vm.define <span class="string">"master"</span>, <span class="symbol">primary:</span> <span class="literal">true</span> <span class="keyword">do</span> <span class="params">|master|</span></span><br><span class="line">    master.vm.hostname = <span class="string">"k8s-cluster-master"</span></span><br><span class="line">    master.vm.box = <span class="string">"ubuntu/xenial64"</span></span><br><span class="line">    master.vm.network <span class="string">"forwarded_port"</span>, <span class="symbol">guest:</span> <span class="number">80</span>, <span class="symbol">host:</span> <span class="number">10000</span>, <span class="symbol">protocol:</span> <span class="string">"tcp"</span></span><br><span class="line">    master.vm.network <span class="string">"private_network"</span>, <span class="symbol">type:</span> <span class="string">"dhcp"</span></span><br><span class="line">    master.vm.provision <span class="string">"shell"</span>, <span class="symbol">inline:</span> $script</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  config.vm.define <span class="string">"node"</span> <span class="keyword">do</span> <span class="params">|node|</span></span><br><span class="line">    node.vm.hostname = <span class="string">"k8s-cluster-node"</span></span><br><span class="line">    node.vm.box = <span class="string">"ubuntu/xenial64"</span></span><br><span class="line">    node.vm.network <span class="string">"forwarded_port"</span>, <span class="symbol">guest:</span> <span class="number">80</span>, <span class="symbol">host:</span> <span class="number">10001</span>, <span class="symbol">protocol:</span> <span class="string">"tcp"</span></span><br><span class="line">    node.vm.network <span class="string">"private_network"</span>, <span class="symbol">type:</span> <span class="string">"dhcp"</span></span><br><span class="line">    node.vm.provision <span class="string">"shell"</span>, <span class="symbol">inline:</span> $script</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h2 id="启动节点"><a href="#启动节点" class="headerlink" title="启动节点"></a>启动节点</h2><p>执行命令<code>vagrant up</code>，Vagrant 开始自动下载Ubuntu镜像，并执行我们写在<code>Vagrantfile</code>里的 Shell 脚本，顺利启动后，在当前窗口执行<code>vagrant ssh master</code>，新开一个窗口执行<code>vagrant ssh node</code>分别 ssh 进入到主节点以及工作节点。 <img src="https://i.loli.net/2018/11/14/5bec3c9cd27ad.png" alt="vagrant"><em><small>第一次执行<code>vagrant up</code>会看到更多的信息。</small></em></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">$script = &lt;&lt;-SCRIPT</span><br><span class="line">echo <span class="string">"Update and install the kubeadm"</span></span><br><span class="line"></span><br><span class="line">apt-get update &amp;&amp; apt-get install -y apt-transport-https curl</span><br><span class="line">curl -s <span class="symbol">https:</span>/<span class="regexp">/packages.cloud.google.com/apt</span><span class="regexp">/doc/apt</span>-key.gpg <span class="params">| apt-key add -</span></span><br><span class="line"><span class="params">cat &lt;&lt;EOF &gt;/etc/apt/sources.list.d/kubernetes.list</span></span><br><span class="line"><span class="params">deb https://apt.kubernetes.io/ kubernetes-xenial main</span></span><br><span class="line"><span class="params">EOF</span></span><br><span class="line"><span class="params">apt-get update</span></span><br><span class="line"><span class="params">apt-get install -y kubelet kubeadm kubectl docker.io</span></span><br><span class="line"><span class="params">apt-mark hold kubelet kubeadm kubectl</span></span><br><span class="line"><span class="params">usermod -aG docker vagrant</span></span><br><span class="line"><span class="params">kubeadm config images pull</span></span><br><span class="line"><span class="params">SCRIPT</span></span><br><span class="line"><span class="params"></span></span><br><span class="line"><span class="params">Vagrant.configure("2") <span class="keyword">do</span> |</span>config<span class="params">|</span></span><br><span class="line"><span class="params">  config.vm.provider "virtualbox" <span class="keyword">do</span> |</span>v<span class="params">|</span></span><br><span class="line"><span class="params">    v.memory = 2048</span></span><br><span class="line"><span class="params">    v.cpus = 2</span></span><br><span class="line"><span class="params">  <span class="keyword">end</span></span></span><br><span class="line"><span class="params">  </span></span><br><span class="line"><span class="params">  config.vm.define "master", primary: <span class="literal">true</span> <span class="keyword">do</span> |</span>master<span class="params">|</span></span><br><span class="line"><span class="params">    master.vm.hostname = "k8s-cluster-master"</span></span><br><span class="line"><span class="params">    master.vm.box = "ubuntu/xenial64"</span></span><br><span class="line"><span class="params">    master.vm.network "forwarded_port", guest: 80, host: 10000, protocol: "tcp"</span></span><br><span class="line"><span class="params">    master.vm.network "private_network", type: "dhcp"</span></span><br><span class="line"><span class="params">    master.vm.provision "shell", inline: $script</span></span><br><span class="line"><span class="params">  <span class="keyword">end</span></span></span><br><span class="line"><span class="params"></span></span><br><span class="line"><span class="params">  config.vm.define "node" <span class="keyword">do</span> |</span>node<span class="params">|</span></span><br><span class="line"><span class="params">    node.vm.hostname = "k8s-cluster-node"</span></span><br><span class="line"><span class="params">    node.vm.box = "ubuntu/xenial64"</span></span><br><span class="line"><span class="params">    node.vm.network "forwarded_port", guest: 80, host: 10001, protocol: "tcp"</span></span><br><span class="line"><span class="params">    node.vm.network "private_network", type: "dhcp"</span></span><br><span class="line"><span class="params">    node.vm.provision "shell", inline: $script</span></span><br><span class="line"><span class="params">  <span class="keyword">end</span></span></span><br><span class="line"><span class="params"><span class="keyword">end</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="启动节点">启动节点</h2>
+<p>执行命令<code>vagrant up</code>，Vagrant 开始自动下载Ubuntu镜像，并执行我们写在<code>Vagrantfile</code>里的 Shell 脚本，顺利启动后，在当前窗口执行<code>vagrant ssh master</code>，新开一个窗口执行<code>vagrant ssh node</code>分别 ssh 进入到主节点以及工作节点。 <img src="https://i.loli.net/2018/11/14/5bec3c9cd27ad.png" alt="vagrant"><em><small>第一次执行<code>vagrant up</code>会看到更多的信息。</small></em></p>
 <p>使用命令<code>ip a</code>查看当前节点 ip，两个节点互相 ping，检查连通性。</p>
-<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>过程没有想象中顺利，我完全跟着官网文档操作，却陷进到一连串的坑里，耗费了接近两周的时间才把 Kubernets 集群搭建起来。</p>
-<h2 id="Round-1-Kubernetes-集群"><a href="#Round-1-Kubernetes-集群" class="headerlink" title="Round 1 - Kubernetes 集群"></a>Round 1 - Kubernetes 集群</h2><p>我们一步一步按照<a href="https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/" target="_blank" rel="noopener">官方文档</a>，在主节点 <em>k8s-cluster-master</em> 执行<code>sudo kubeadm init</code>初始化节点，成功后，根据 kubeadm 的输出，执行接下来的命令。</p>
+<h1>部署</h1>
+<p>过程没有想象中顺利，我完全跟着官网文档操作，却陷进到一连串的坑里，耗费了接近两周的时间才把 Kubernets 集群搭建起来。</p>
+<h2 id="Round-1-Kubernetes-集群">Round 1 - Kubernetes 集群</h2>
+<p>我们一步一步按照<a href="https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/" target="_blank" rel="noopener">官方文档</a>，在主节点 <em>k8s-cluster-master</em> 执行<code>sudo kubeadm init</code>初始化节点，成功后，根据 kubeadm 的输出，执行接下来的命令。</p>
 <ul>
-<li><p>复制 kubeadm 生成的配置文件，更改配置文件夹的权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p $HOME/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) $HOME/.kube/config</span><br></pre></td></tr></table></figure>
+<li>复制 kubeadm 生成的配置文件，更改配置文件夹的权限<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p $HOME&#x2F;.kube</span><br><span class="line">sudo cp -i &#x2F;etc&#x2F;kubernetes&#x2F;admin.conf $HOME&#x2F;.kube&#x2F;config</span><br><span class="line">sudo chown $(id -u):$(id -g) $HOME&#x2F;.kube&#x2F;config</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>选择一个<a href="https://kubernetes.io/docs/concepts/cluster-administration/addons/" target="_blank" rel="noopener">CNI 插件</a>组建网络，我们这里选择了<em>Weave Net</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f &quot;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d &apos;\n&apos;)&quot;</span><br></pre></td></tr></table></figure>
+<li>选择一个<a href="https://kubernetes.io/docs/concepts/cluster-administration/addons/" target="_blank" rel="noopener">CNI 插件</a>组建网络，我们这里选择了<em>Weave Net</em><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f &quot;https:&#x2F;&#x2F;cloud.weave.works&#x2F;k8s&#x2F;net?k8s-version&#x3D;$(kubectl version | base64 | tr -d &#39;\n&#39;)&quot;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>工作节点执行最后一句<code>sudo kubeadm join</code>，加入到 Kubernetes 集群</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm join 10.0.2.15:6443 --token &lt;token&gt; --discovery-token-ca-cert-hash sha256:&lt;hash&gt;</span><br></pre></td></tr></table></figure>
+<li>工作节点执行最后一句<code>sudo kubeadm join</code>，加入到 Kubernetes 集群<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm join 10.0.2.15:6443 --token &lt;token&gt; --discovery-token-ca-cert-hash sha256:&lt;hash&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>查看节点状态，Pods 状态</p>
-</li>
+<li>查看节点状态，Pods 状态</li>
 </ul>
 <p><img src="https://i.loli.net/2018/11/22/5bf656dc473c4.png" alt="Node: master | get pods, get nodes"><center><small>Node: master | get pods, get nodes</small></center></p>
 <p><img src="https://i.loli.net/2018/11/22/5bf65a6319aba.png" alt="Node: worker | kubeadm join"><center><small>Node: worker | kubeadm join</small></center></p>
-<h3 id="Round-1-1-工作节点无法连接到主节点"><a href="#Round-1-1-工作节点无法连接到主节点" class="headerlink" title="Round 1.1 - 工作节点无法连接到主节点"></a>Round 1.1 - 工作节点无法连接到主节点</h3><p>这里遇到第一个坑，工作节点无法连接到主节点的 Kubernetes api。在工作节点的 <code>kubeadm join</code> log，我们可以看到 kubelet 在不断地尝试访问 10.0.2.15:6443，曾经看过 VirtualBox 的说明文档，默认情况下 ip 10.0.2.15 是在虚拟机在宿主机网络里的 ip，所有的虚拟机都遵循这一设定，而工作节点需要访问的是主节点的 6443 端口，现在却在尝试 10.0.2.15，相当于不断尝试连接节点自身的6443端口，这明显不对。</p>
+<h3 id="Round-1-1-工作节点无法连接到主节点">Round 1.1 - 工作节点无法连接到主节点</h3>
+<p>这里遇到第一个坑，工作节点无法连接到主节点的 Kubernetes api。在工作节点的 <code>kubeadm join</code> log，我们可以看到 kubelet 在不断地尝试访问 10.0.2.15:6443，曾经看过 VirtualBox 的说明文档，默认情况下 ip 10.0.2.15 是在虚拟机在宿主机网络里的 ip，所有的虚拟机都遵循这一设定，而工作节点需要访问的是主节点的 6443 端口，现在却在尝试 10.0.2.15，相当于不断尝试连接节点自身的6443端口，这明显不对。</p>
 <p>因此，我们需要 kubelet 访问/提供正确的节点ip，查阅文档，发现 kubeadm 有一个参数 <code>--apiserver-advertise-address=&lt;ip&gt;</code>，显式指定 kubelet api server 的 ip 地址。</p>
 <p>好吧，执行<code>sudo kubeadm reset</code>，加上参数，重新做一遍。</p>
-<h3 id="Round-1-2-工作节点-Not-Ready"><a href="#Round-1-2-工作节点-Not-Ready" class="headerlink" title="Round 1.2 - 工作节点 Not Ready"></a>Round 1.2 - 工作节点 Not Ready</h3><p><img src="https://i.loli.net/2018/11/22/5bf65dc1ca316.png" alt="Node: master | kubeadm init"><center><small>Node: master | kubeadm init</small></center><br><img src="https://i.loli.net/2018/11/22/5bf65d63a35f8.png" alt="Node: worker | kubeadm join"><center><small>Node: worker | kubeadm join</small></center></p>
-<p>执行成功，但是当我们在主节点执行<code>kubectl get nodes</code>, <code>kubectl get pods -n kube-system</code>，可以看到 node: NotReady，weave 的 Pods 一直处于 CrashLoopBackOff 状态(这表示 Pod 创建失败，kubelet 在不断地重试)，在工作节点查看 docker logs 发现 weave 一直在尝试连接 10.96.0.1:443，但是根据 docker logs 显示，以及通过 ping，telnet 检测，全 timeout，目标不可达。<br><img src="https://i.loli.net/2018/11/22/5bf661e18052d.png" alt="Node: master | get nodes, get pods"><center><small>Node: master | get nodes, get pods</small></center></p>
+<h3 id="Round-1-2-工作节点-Not-Ready">Round 1.2 - 工作节点 Not Ready</h3>
+<p><img src="https://i.loli.net/2018/11/22/5bf65dc1ca316.png" alt="Node: master | kubeadm init"><center><small>Node: master | kubeadm init</small></center>
+<img src="https://i.loli.net/2018/11/22/5bf65d63a35f8.png" alt="Node: worker | kubeadm join"><center><small>Node: worker | kubeadm join</small></center></p>
+<p>执行成功，但是当我们在主节点执行<code>kubectl get nodes</code>, <code>kubectl get pods -n kube-system</code>，可以看到 node: NotReady，weave 的 Pods 一直处于 CrashLoopBackOff 状态(这表示 Pod 创建失败，kubelet 在不断地重试)，在工作节点查看 docker logs 发现 weave 一直在尝试连接 10.96.0.1:443，但是根据 docker logs 显示，以及通过 ping，telnet 检测，全 timeout，目标不可达。
+<img src="https://i.loli.net/2018/11/22/5bf661e18052d.png" alt="Node: master | get nodes, get pods"><center><small>Node: master | get nodes, get pods</small></center></p>
 <p><img src="https://i.loli.net/2018/11/22/5bf6691bcb58c.png" alt="Node: worker | logs"><center><small>Node: worker | logs</small></center></p>
 <p>这个 ip 地址理应是 Kubernetes 提供的，经过一番查找，在 Services 里找到了这个 ip，<code>kubectl get svc</code>，可以看到返回结果表明 10.96.0.1 是 Kubernetes 本身在集群里的 ip。</p>
 <p>不科学啊，节点之间是通的，难道是 CNI 插件有问题？换一个试试，在官网的教程里有好几个其它插件供选择，这次我选择了 <em>flannel</em>，跟 <em>Weave Net</em> 不太一样的是，它需要在 init 的时候加上一个额外的参数<code>--pod-network-cidr=10.244.0.0/16</code>，net.bridge.bridge-nf-call-iptables 必须设为 1，reset 集群，重新执行命令部署。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.bridge.bridge-nf-call-iptables=1</span><br><span class="line">sudo kubeadm init --apiserver-advertise-address 172.28.128.3 --pod-network-cidr=10.244.0.0/16</span><br><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.bridge.bridge-nf-call-iptables&#x3D;1</span><br><span class="line">sudo kubeadm init --apiserver-advertise-address 172.28.128.3 --pod-network-cidr&#x3D;10.244.0.0&#x2F;16</span><br><span class="line">kubectl apply -f https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;coreos&#x2F;flannel&#x2F;bc79dd1505b0c8681ece4de4c0d86c5cd2643275&#x2F;Documentation&#x2F;kube-flannel.yml</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo kubeadm join 172.28.128.3:6443 --token 4puk29.w2ur96jtfuu9z22v --discovery-token-ca-cert-hash sha256:3973ee67977702c144f6f57613f8ce7765eac975990520846a15465fac625043 --apiserver-advertise-address 172.28.128.4</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2018/11/22/5bf673fe2a2b2.png" alt="Node: master | get nodes, get pods"><center><small>Node: master | get nodes, get pods</small></center><br>这次一切都很顺利，<code>kubectl get nodes</code>显示节点 ready，<code>kubectl get pods -n kube-system</code>显示所有 Pods 运行正常，great! </p>
-<h2 id="Round-2-Kubernetes-Dashboard"><a href="#Round-2-Kubernetes-Dashboard" class="headerlink" title="Round 2 - Kubernetes Dashboard"></a>Round 2 - Kubernetes Dashboard</h2><p>从<a href="https://github.com/kubernetes/dashboard" target="_blank" rel="noopener">Kubernetes Dashboard Repo</a>获取部署命令，启动 Kubenetes Proxy，通过它访问 Dashboard: <a href="http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/" target="_blank" rel="noopener">http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/</a> 。注意这里使用的是虚拟机的 localhost，所以我们更改 VirtualBox 的网络配置，添加一个端口映射到主节点的 8001 端口。(Kubernetes Proxy 就是一个反向代理，把外部请求通过主节点/集群，转发到工作节点/集群，避免直接暴露服务，降低安全风险)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml</span><br><span class="line">kubectl proxy --address 0.0.0.0 <span class="comment"># 允许虚拟机之外的流量</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="https://i.loli.net/2018/11/23/5bf768a92f3f2.png" alt="Virtualbox | NAT port mapping"> <center><small>Virtualbox | NAT port mapping</small></center><br>但事与愿违，又出问题了，从宿主机用浏览器打开上述网址访问 Dashboard，返回如下 json。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"kind"</span>: <span class="string">"Status"</span>,</span><br><span class="line">  <span class="attr">"apiVersion"</span>: <span class="string">"v1"</span>,</span><br><span class="line">  <span class="attr">"metadata"</span>: &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"status"</span>: <span class="string">"Failure"</span>,</span><br><span class="line">  <span class="attr">"message"</span>: <span class="string">"no endpoints available for service \"https:kubernetes-dashboard:\""</span>,</span><br><span class="line">  <span class="attr">"reason"</span>: <span class="string">"ServiceUnavailable"</span>,</span><br><span class="line">  <span class="attr">"code"</span>: <span class="number">503</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Round-2-1-503"><a href="#Round-2-1-503" class="headerlink" title="Round 2.1 - 503"></a>Round 2.1 - 503</h3><p>执行命令<code>kubectl get pods -n kube-system</code>，发现 dashboard 跟之前 Weave Net 一样，无法正常创建 container，在工作节点执行<code>docker logs &lt;contianer_name|container_id&gt;</code>查看CNI插件的日志，发现它还是使用了 NAT 网卡的 ip 10.0.2.15，也就是虚拟机在自己的隔离网络的 ip，无法成功组网，在之前 “get nodes” “get pods” 显示一切正常，只是 <em>flannel</em> 跟 <em>Weave Net</em> 实现方式不一样而已。<br><img src="https://i.loli.net/2018/11/26/5bfba5999e281.png" alt="Node: worker | docker logs"><center><small>Node: worker | docker logs</small></center></p>
-<p>大致原因清楚了，那怎么解决呢？”get nodes” 会不会有相关信息呢？接着，我找到了一个参数看到了各个节点的 ip，<code>kubectl get nodes -o wide</code>，可以看到所有的节点的 internal ip 都是 10.0.2.15。在刚开始，我不确定这个 “internal ip” 在 Kubernetes 里有什么含义，瞎找了一段时间，甚至修改 dashboard 的 yaml 文件，让它强制运行在主节点，但在后面部署其它 APP 的时候都出现了错误，无法被正常访问，只好继续寻找其它解决办法，最终让我在官方文档找到了更改它的方法。<br>这个 internal ip 定义在 kubelet 的启动参数，默认使用的是系统第一个网卡的 ip，在 kubelet 的启动参数里，它叫 “node-ip”。有两种方法，</p>
+<p><img src="https://i.loli.net/2018/11/22/5bf673fe2a2b2.png" alt="Node: master | get nodes, get pods"><center><small>Node: master | get nodes, get pods</small></center>
+这次一切都很顺利，<code>kubectl get nodes</code>显示节点 ready，<code>kubectl get pods -n kube-system</code>显示所有 Pods 运行正常，great!</p>
+<h2 id="Round-2-Kubernetes-Dashboard">Round 2 - Kubernetes Dashboard</h2>
+<p>从<a href="https://github.com/kubernetes/dashboard" target="_blank" rel="noopener">Kubernetes Dashboard Repo</a>获取部署命令，启动 Kubenetes Proxy，通过它访问 Dashboard: <a href="http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/" target="_blank" rel="noopener">http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/</a> 。注意这里使用的是虚拟机的 localhost，所以我们更改 VirtualBox 的网络配置，添加一个端口映射到主节点的 8001 端口。(Kubernetes Proxy 就是一个反向代理，把外部请求通过主节点/集群，转发到工作节点/集群，避免直接暴露服务，降低安全风险)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml</span><br><span class="line">kubectl proxy --address 0.0.0.0 <span class="comment"># 允许虚拟机之外的流量</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2018/11/23/5bf768a92f3f2.png" alt="Virtualbox | NAT port mapping"> <center><small>Virtualbox | NAT port mapping</small></center>
+但事与愿违，又出问题了，从宿主机用浏览器打开上述网址访问 Dashboard，返回如下 json。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"kind"</span>: <span class="string">"Status"</span>,</span><br><span class="line">  <span class="attr">"apiVersion"</span>: <span class="string">"v1"</span>,</span><br><span class="line">  <span class="attr">"metadata"</span>: &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"status"</span>: <span class="string">"Failure"</span>,</span><br><span class="line">  <span class="attr">"message"</span>: <span class="string">"no endpoints available for service \"https:kubernetes-dashboard:\""</span>,</span><br><span class="line">  <span class="attr">"reason"</span>: <span class="string">"ServiceUnavailable"</span>,</span><br><span class="line">  <span class="attr">"code"</span>: <span class="number">503</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Round-2-1-503">Round 2.1 - 503</h3>
+<p>执行命令<code>kubectl get pods -n kube-system</code>，发现 dashboard 跟之前 Weave Net 一样，无法正常创建 container，在工作节点执行<code>docker logs &lt;contianer_name|container_id&gt;</code>查看CNI插件的日志，发现它还是使用了 NAT 网卡的 ip 10.0.2.15，也就是虚拟机在自己的隔离网络的 ip，无法成功组网，在之前 “get nodes” “get pods” 显示一切正常，只是 <em>flannel</em> 跟 <em>Weave Net</em> 实现方式不一样而已。
+<img src="https://i.loli.net/2018/11/26/5bfba5999e281.png" alt="Node: worker | docker logs"><center><small>Node: worker | docker logs</small></center></p>
+<p>大致原因清楚了，那怎么解决呢？“get nodes” 会不会有相关信息呢？接着，我找到了一个参数看到了各个节点的 ip，<code>kubectl get nodes -o wide</code>，可以看到所有的节点的 internal ip 都是 10.0.2.15。在刚开始，我不确定这个 “internal ip” 在 Kubernetes 里有什么含义，瞎找了一段时间，甚至修改 dashboard 的 yaml 文件，让它强制运行在主节点，但在后面部署其它 APP 的时候都出现了错误，无法被正常访问，只好继续寻找其它解决办法，最终让我在官方文档找到了更改它的方法。
+这个 internal ip 定义在 kubelet 的启动参数，默认使用的是系统第一个网卡的 ip，在 kubelet 的启动参数里，它叫 “node-ip”。有两种方法，</p>
 <ol>
 <li>通过 kubeadm 控制 kubelet 启动参数</li>
 <li>直接更改 kubelet 的启动参数</li>
 </ol>
 <p>首先尝试使用第一种方法，然后发现 kubeadm 不可以通过命令参数更改 kubelet 的启动参数，只能通过提供一个包含启动参数的配置文件给 kubeadm。关于这一部分的信息，在网上只有较少可以参考，通过搜索引擎找到了 GitHub 上有 issue 提到了通过创建一个配置文件达到我们的目的，而且我们可以把所有 kubeadm init, kubeadm join 的其它所有参数都定义在 kubeadm 的配置文件里，而 node ip 的更改也比较简单，只需要通过参数 “kubeletExtraArgs” 设置额外的参数个 kubelet 就可以了。</p>
 <p>但有一部分参数，例如关于 “apiserver-advertise-address” 的设定始终不生效，最后凭借 GitHub 上的关键字在 kubeadm 的文档里找到了相关描述，原来它使用的配置文件的方法还是处于 alpha 阶段，而且 kubeadm join 需要用到的 token 是生成的，没办法写死在配置文件，再三考虑，还是放弃了这种办法，还是使用原来的办法，再配合一个脚本，更改 node ip，脚本内容如下，执行完后，重启 kubelet，docker ，使配置生效。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">kubeadm.k8s.io/v1alpha3</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">InitConfiguration</span></span><br><span class="line"><span class="attr">apiEndpoint:</span></span><br><span class="line"><span class="attr">  advertiseAddress:</span> <span class="number">172.28</span><span class="number">.128</span><span class="number">.3</span></span><br><span class="line"><span class="attr">nodeRegistration:</span></span><br><span class="line"><span class="attr">  kubeletExtraArgs:</span></span><br><span class="line"><span class="attr">    node-ip:</span> <span class="number">172.28</span><span class="number">.128</span><span class="number">.3</span></span><br><span class="line"><span class="attr">pod-network-cidr:</span> <span class="number">10.244</span><span class="number">.0</span><span class="number">.0</span><span class="string">/1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">kubeadm.k8s.io/v1alpha3</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">InitConfiguration</span></span><br><span class="line"><span class="attr">apiEndpoint:</span></span><br><span class="line">  <span class="attr">advertiseAddress:</span> <span class="number">172.28</span><span class="number">.128</span><span class="number">.3</span></span><br><span class="line"><span class="attr">nodeRegistration:</span></span><br><span class="line">  <span class="attr">kubeletExtraArgs:</span></span><br><span class="line">    <span class="attr">node-ip:</span> <span class="number">172.28</span><span class="number">.128</span><span class="number">.3</span></span><br><span class="line"><span class="attr">pod-network-cidr:</span> <span class="number">10.244</span><span class="number">.0</span><span class="number">.0</span><span class="string">/1</span></span><br></pre></td></tr></table></figure>
 <center><small>YAML file for kubeadm init</small></center>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/bin/sh</span></span><br><span class="line"></span><br><span class="line">COND_NODE_IP=`sudo grep <span class="string">"node-ip"</span> /var/lib/kubelet/kubeadm-flags.env | wc -l`</span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$&#123;COND_NODE_IP&#125;</span> = 1 ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"--node-ip had been set, skipped"</span></span><br><span class="line">  <span class="built_in">exit</span> 0</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">sudo sed -i <span class="string">'/^.*/ s/$/ --node-ip=172.28.128.3/'</span> /var/lib/kubelet/kubeadm-flags.env</span><br><span class="line">sudo systemctl restart kubelet</span><br></pre></td></tr></table></figure>
-<center><small>Shell script for changing “node ip” on master</small></center>
-
+<center><small>Shell script for changing "node ip" on master</small></center>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/bin/sh</span></span><br><span class="line"></span><br><span class="line">COND_NODE_IP=`sudo grep <span class="string">"node-ip"</span> /var/lib/kubelet/kubeadm-flags.env | wc -l`</span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$&#123;COND_NODE_IP&#125;</span> = 1 ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"--node-ip had been set, skipped"</span></span><br><span class="line">  <span class="built_in">exit</span> 0</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">sudo sed -i <span class="string">'/^.*/ s/$/ --node-ip=172.28.128.4/'</span> /var/lib/kubelet/kubeadm-flags.env</span><br><span class="line">sudo systemctl restart kubelet docker</span><br></pre></td></tr></table></figure>
-<center><small>Shell script for changing “node ip” on worker</small></center>
-
+<center><small>Shell script for changing "node ip" on worker</small></center>
 <p><img src="https://i.loli.net/2018/11/26/5bfbbfd1a210f.png" alt="Node: master | get nodes"> <center><small>Node: master | get nodes</small></center></p>
 <p>尝试部署 dashboard，还是不能访问，期间还尝试了好几种办法，包括：修改 <em>flannel</em> 的 YAML 文件；reset，重建虚拟机；切换其它的 CNI 插件；等等。无头绪之际，在 <em>flannel</em> 的 <a href="https://github.com/coreos/flannel/blob/master/Documentation/troubleshooting.md#vagrant" target="_blank" rel="noopener">Github Wik</a> 看到了一个很关键的信息：</p>
 <blockquote>
@@ -512,14 +526,20 @@ height:50vh;
 </blockquote>
 <p>默认使用网卡0？！ IP address 10.0.2.15 ？！这应该就是一直出问题的根源了！为了简单，我们还是切换回 <em>Weave Net</em>，<code>kubeadm reset</code>，把所有的东西重置，继续试验。</p>
 <p>重置完成后，重新按照之前的流程，初始化，安装 CNI 插件（<em>Weave Net</em>）。<em>Weave Net</em> 还是在不断尝试连接 10.96.0.1。结合刚才看到的 <em>flannel</em> 的说明，跟踪路由看看请求去了哪里，在工作节点执行命令<code>traceroute 10.96.0.1</code>，可以在结果看到请求被路由到宿主机的网络了… 难怪一直无法连接，它在尝试连接到我们宿主机的内网 ip 为 10.96.0.1 的机器。</p>
-<p>看下面👇截图里还有一个 ip，路由第一跳是 ip 10.0.2.2<br><img src="https://i.loli.net/2018/11/27/5bfd0ddf84222.png" alt="Node: worker | traceroute"><center><small>Node: worker | traceroute</small></center></p>
-<p>灵光一动，想起来以前碰到过因为路由设置错误导致的网络问题，特意去复习了一下 Linux 路由知识。<br>在各个节点执行命令<code>ip route</code>查看路由表，可以看到虚拟机的路由表设置是让默认的请求全都通过 10.0.2.2 也就是宿主机的 NAT 网卡作出网络请求，</p>
+<p>看下面👇截图里还有一个 ip，路由第一跳是 ip 10.0.2.2
+<img src="https://i.loli.net/2018/11/27/5bfd0ddf84222.png" alt="Node: worker | traceroute"><center><small>Node: worker | traceroute</small></center></p>
+<p>灵光一动，想起来以前碰到过因为路由设置错误导致的网络问题，特意去复习了一下 Linux 路由知识。
+在各个节点执行命令<code>ip route</code>查看路由表，可以看到虚拟机的路由表设置是让默认的请求全都通过 10.0.2.2 也就是宿主机的 NAT 网卡作出网络请求，</p>
 <p>工作节点需要正常的连接到主节点，那么就必须让它的流量走 Host Only 网络，也就是网卡1，而不是通过网卡0上的 10.0.2.2 去尝试连接到宿主机的网络主机。</p>
-<p>检查虚拟机 Host Only 的网卡的设置，在宿主机 Terminal 执行<code>ifconfig</code>查看对应的网卡的 ip 地址，这个 ip 就是我们用于让两台虚拟机正常通讯的路由 ip。<br><img src="https://i.loli.net/2018/11/28/5bfdfba3f3067.png" alt="Check the Host Only ip for route"> <center><small>Check the Host Only ip for route</small></center></p>
+<p>检查虚拟机 Host Only 的网卡的设置，在宿主机 Terminal 执行<code>ifconfig</code>查看对应的网卡的 ip 地址，这个 ip 就是我们用于让两台虚拟机正常通讯的路由 ip。
+<img src="https://i.loli.net/2018/11/28/5bfdfba3f3067.png" alt="Check the Host Only ip for route"> <center><small>Check the Host Only ip for route</small></center></p>
 <p>使用 <code>kubeadm reset</code> 重设所有设定，别忘了执行之前写的更改 node-ip 的脚本，执行 ip route 相关的子命令更新路由表，让工作节点所有的流量通过网卡1，进而正确地让主节点、工作节点互相通讯。执行顺序如下。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在各个节点执行</span></span><br><span class="line">ip route <span class="comment">#查看路由表</span></span><br><span class="line">sudo kubeadm reset</span><br><span class="line"></span><br><span class="line"><span class="comment"># master节点</span></span><br><span class="line">sudo kubeadm init --apiserver-advertise-address=172.28.128.3</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">kubectl apply -f <span class="string">"https://cloud.weave.works/k8s/net?k8s-version=<span class="variable">$(kubectl version | base64 | tr -d '\n')</span>"</span></span><br><span class="line">bash change-kubelet-node-ip.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># node节点</span></span><br><span class="line">sudo kubeadm join 172.28.128.3:6443 --token &lt;token&gt; --discovery-token-ca-cert-hash &lt;token&gt; --apiserver-advertise-address=172.28.128.4</span><br><span class="line">bash change-kubelet-node-ip.sh</span><br><span class="line">sudo ip route del default via 10.0.2.2 &amp;&amp; sudo ip route add default via 172.28.128.1</span><br></pre></td></tr></table></figure>
-<p>执行以下命令部署 Kubernetes Dashboard，在宿主机访问 <a href="http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login" target="_blank" rel="noopener">http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login</a> 验证部署结果。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml</span><br><span class="line">kubectl proxy --address 0.0.0.0</span><br></pre></td></tr></table></figure></p>
-<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><p>创建 NGINX 的yaml。<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  selector:</span></span><br><span class="line"><span class="attr">    svc:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">ClusterIP</span></span><br><span class="line"><span class="attr">  ports:</span></span><br><span class="line"><span class="attr">    - port:</span> <span class="number">9999</span></span><br><span class="line"><span class="attr">      targetPort:</span> <span class="number">80</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  replicas:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  revisionHistoryLimit:</span> <span class="number">3</span></span><br><span class="line"><span class="attr">  selector:</span></span><br><span class="line"><span class="attr">    matchLabels:</span></span><br><span class="line"><span class="attr">      svc:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">  template:</span></span><br><span class="line"><span class="attr">    metadata:</span></span><br><span class="line"><span class="attr">      name:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">      labels:</span></span><br><span class="line"><span class="attr">        svc:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">    spec:</span></span><br><span class="line"><span class="attr">      containers:</span></span><br><span class="line"><span class="attr">        - name:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">          image:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">          ports:</span></span><br><span class="line"><span class="attr">          - containerPort:</span> <span class="number">80</span></span><br><span class="line"><span class="attr">            protocol:</span> <span class="string">TCP</span></span><br></pre></td></tr></table></figure></p>
+<p>执行以下命令部署 Kubernetes Dashboard，在宿主机访问 <a href="http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login" target="_blank" rel="noopener">http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login</a> 验证部署结果。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml</span><br><span class="line">kubectl proxy --address 0.0.0.0</span><br></pre></td></tr></table></figure>
+<h2 id="Nginx">Nginx</h2>
+<p>创建 NGINX 的yaml。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">svc:</span> <span class="string">nginx</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">ClusterIP</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">port:</span> <span class="number">9999</span></span><br><span class="line">      <span class="attr">targetPort:</span> <span class="number">80</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">revisionHistoryLimit:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">svc:</span> <span class="string">nginx</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">nginx</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">svc:</span> <span class="string">nginx</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">nginx</span></span><br><span class="line">          <span class="attr">image:</span> <span class="string">nginx</span></span><br><span class="line">          <span class="attr">ports:</span></span><br><span class="line">          <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">80</span></span><br><span class="line">            <span class="attr">protocol:</span> <span class="string">TCP</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>执行命令<code>kubectl apply -f nginx-rs.yaml</code> 部署 nginx</li>
 <li>启动 Kubernetes proxy <code>kubectl proxy --address 0.0.0.0</code></li>
@@ -527,8 +547,10 @@ height:50vh;
 <li>如果一切顺利，你将看到如下页面</li>
 </ul>
 <p><img src="https://i.loli.net/2019/03/01/5c78cf3876a85.png" alt="nginx via kube-proxy"><center><small>nginx via kube-proxy</small></center></p>
-<h1 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h1><p>当初想写这篇文章是为了记录 Kubernetes 在本地虚拟环境下的集群部署流程的，没想到因为工作变动、踩坑、怠惰，使得这一篇文章拖了这么长的时间，因为对原理不熟，期间重复了很多次操作，以至于整个流程记录下来非常冗长，而且期间中断了好几次，所以语句可能会有不连贯的情况。接下来我将会重整整个流程写一篇姊妹篇 TL;DR 版，敬请期待。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1>待续</h1>
+<p>当初想写这篇文章是为了记录 Kubernetes 在本地虚拟环境下的集群部署流程的，没想到因为工作变动、踩坑、怠惰，使得这一篇文章拖了这么长的时间，因为对原理不熟，期间重复了很多次操作，以至于整个流程记录下来非常冗长，而且期间中断了好几次，所以语句可能会有不连贯的情况。接下来我将会重整整个流程写一篇姊妹篇 TL;DR 版，敬请期待。</p>
+<h1>参考资料</h1>
+<ul>
 <li><a href="https://github.com/kubernetes/dashboard/issues/916#issuecomment-307761029" target="_blank" rel="noopener">Dashboard running on master</a></li>
 <li><a href="https://godoc.org/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1alpha3#hdr-Kubeadm_init_configuration_types" target="_blank" rel="noopener">kubeadm with command - alpha - InitConfiguration</a></li>
 <li><a href="https://godoc.org/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1alpha3#hdr-Kubeadm_join_configuration_types" target="_blank" rel="noopener">kubeadm with command - alpha - JoinConfiguration</a></li>
@@ -545,10 +567,10 @@ height:50vh;
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://blog.stark-x.cn">Stark-X</a>
-            </p><p>原文链接：<a href="https://blog.stark-x.cn/2018/11/14/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox/">https://blog.stark-x.cn/2018/11/14/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox/</a>
-            </p><p>发表日期：<a href="https://blog.stark-x.cn/2018/11/14/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox/">November 14th 2018, 8:09:31 pm</a>
-            </p><p>更新日期：<a href="https://blog.stark-x.cn/2018/11/14/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox/">March 5th 2019, 4:46:21 pm</a>
-            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+            <p>原文链接：<a href="https://blog.stark-x.cn/Solutions/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox.html">https://blog.stark-x.cn/Solutions/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox.html</a>
+            <p>发表日期：<a href="https://blog.stark-x.cn/Solutions/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox.html">November 14th 2018, 8:09:31 pm</a>
+            <p>更新日期：<a href="https://blog.stark-x.cn/Solutions/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox.html">March 5th 2019, 4:46:21 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
@@ -556,7 +578,7 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/2019/03/04/local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox-tldr/" title="使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群 - TL;DR">
+                <a href= "/Solutions/local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox-tldr.html" title= "使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群 - TL;DR">
                     <div class="nextTitle">使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群 - TL;DR</div>
                 </a>
             
@@ -564,7 +586,7 @@ height:50vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2018/08/31/the-great-vim/" title="『上古神器』Vim">
+                <a href= "/Tools/the-great-vim.html" title= "『上古神器』Vim">
                     <div class="prevTitle">『上古神器』Vim</div>
                 </a>
             
@@ -573,7 +595,7 @@ height:50vh;
     <!-- 评论插件 -->
     <!-- 来必力City版安装代码 -->
 
-    <div id="lv-container" data-id="city" data-uid="MTAyMC8zODU2MC8xNTA4OA==">
+    <div id="lv-container" data-id="city" data-uid= MTAyMC8zODU2MC8xNTA4OA==>
         <script type="text/javascript">
             (function (d, s) {
                 var j, e = d.getElementsByTagName(s)[0];
@@ -611,47 +633,13 @@ height:50vh;
     
         
             
-                <a href="mailto:&#000120;&#0000105;&#0000097;&#x00006f;&#x00006a;&#105;&#101;&#122;&#104;&#105;&#050;&#0064;&#00103;&#000109;&#97;&#0000105;&#00000108;&#46;&#99;&#00000111;&#x6d;" class="iconfont-archer email" title="email"></a>
+                <a href="mailto:&#000120;&#0000105;&#0000097;&#x00006f;&#x00006a;&#105;&#101;&#122;&#104;&#105;&#050;&#0064;&#00103;&#000109;&#97;&#0000105;&#00000108;&#46;&#99;&#00000111;&#x6d;" class="iconfont-archer email" title=email ></a>
             
         
     
         
             
-                <a href="//github.com/Stark-X" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://stackoverflow.com/users/8318455/stark" class="iconfont-archer stack-overflow" target="_blank" title="stack-overflow"></a>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.v2ex.com/member/StarkXiao" class="iconfont-archer v2ex" target="_blank" title="v2ex"></a>
+                <a href="//github.com/Stark-X" class="iconfont-archer github" target="_blank" title=github></a>
             
         
     
@@ -664,8 +652,42 @@ height:50vh;
         
     
         
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
             
-                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title="rss"></a>
+                <a href="https://stackoverflow.com/users/8318455/stark" class="iconfont-archer stack-overflow" target="_blank" title=stack-overflow></a>
+            
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.v2ex.com/member/StarkXiao" class="iconfont-archer v2ex" target="_blank" title=v2ex></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
             
         
     
@@ -704,7 +726,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#目标"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开工"><span class="toc-number">2.</span> <span class="toc-text">开工</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#编写-Vagrantfile"><span class="toc-number">2.1.</span> <span class="toc-text">编写 Vagrantfile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动节点"><span class="toc-number">2.2.</span> <span class="toc-text">启动节点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署"><span class="toc-number">3.</span> <span class="toc-text">部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Round-1-Kubernetes-集群"><span class="toc-number">3.1.</span> <span class="toc-text">Round 1 - Kubernetes 集群</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Round-1-1-工作节点无法连接到主节点"><span class="toc-number">3.1.1.</span> <span class="toc-text">Round 1.1 - 工作节点无法连接到主节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Round-1-2-工作节点-Not-Ready"><span class="toc-number">3.1.2.</span> <span class="toc-text">Round 1.2 - 工作节点 Not Ready</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Round-2-Kubernetes-Dashboard"><span class="toc-number">3.2.</span> <span class="toc-text">Round 2 - Kubernetes Dashboard</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Round-2-1-503"><span class="toc-number">3.2.1.</span> <span class="toc-text">Round 2.1 - 503</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx"><span class="toc-number">3.3.</span> <span class="toc-text">Nginx</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#待续"><span class="toc-number">4.</span> <span class="toc-text">待续</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-number">5.</span> <span class="toc-text">参考资料</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">2.</span> <span class="toc-text">开工</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#编写-Vagrantfile"><span class="toc-number">2.1.</span> <span class="toc-text">编写 Vagrantfile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动节点"><span class="toc-number">2.2.</span> <span class="toc-text">启动节点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">3.</span> <span class="toc-text">部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Round-1-Kubernetes-集群"><span class="toc-number">3.1.</span> <span class="toc-text">Round 1 - Kubernetes 集群</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Round-1-1-工作节点无法连接到主节点"><span class="toc-number">3.1.1.</span> <span class="toc-text">Round 1.1 - 工作节点无法连接到主节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Round-1-2-工作节点-Not-Ready"><span class="toc-number">3.1.2.</span> <span class="toc-text">Round 1.2 - 工作节点 Not Ready</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Round-2-Kubernetes-Dashboard"><span class="toc-number">3.2.</span> <span class="toc-text">Round 2 - Kubernetes Dashboard</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Round-2-1-503"><span class="toc-number">3.2.1.</span> <span class="toc-text">Round 2.1 - 503</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx"><span class="toc-number">3.3.</span> <span class="toc-text">Nginx</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">4.</span> <span class="toc-text">待续</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">5.</span> <span class="toc-text">参考资料</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -775,9 +797,20 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 6
+        Total : 7
         </div>
         <!-- search  -->
         
@@ -797,12 +830,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/10</span><a class="archive-post-title" href="/2020/03/10/Using-Mockito-to-partially-mock-a-class/">使用 Mockito mock 类的一部分 [译]</a>
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/Basic/http-2-0.html" >HTTP 2.0</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2020/03/06/shell-value-too-great-for-base-error-token-is-08/">shell - value too great for base (error token is "08")</a>
+            <span class="archive-post-date">03/10</span><a class="archive-post-title" href= "/Develop/Using-Mockito-to-partially-mock-a-class.html" >使用 Mockito mock 类的一部分 [译]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href= "/troubleshoot/shell-value-too-great-for-base-error-token-is-08.html" >shell - value too great for base (error token is "08")</a>
         </li>
     
     
@@ -816,7 +854,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/04</span><a class="archive-post-title" href="/2019/03/04/local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox-tldr/">使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群 - TL;DR</a>
+            <span class="archive-post-date">03/04</span><a class="archive-post-title" href= "/Solutions/local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox-tldr.html" >使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群 - TL;DR</a>
         </li>
     
     
@@ -830,29 +868,25 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/14</span><a class="archive-post-title" href="/2018/11/14/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox/">使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群</a>
+            <span class="archive-post-date">11/14</span><a class="archive-post-title" href= "/Solutions/Local-kubernetes-cluster-with-kubeadm-vagrant-and-virtualbox.html" >使用Kubeadm, Vagrant, Virtualbox部署本地Kubernetes集群</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/31</span><a class="archive-post-title" href="/2018/08/31/the-great-vim/">『上古神器』Vim</a>
+            <span class="archive-post-date">08/31</span><a class="archive-post-title" href= "/Tools/the-great-vim.html" >『上古神器』Vim</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href="/2018/08/01/Use-kolla-ansible-deploy-OpenStack/">使用 kolla-ansible 部署 OpenStack</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/Solutions/Use-kolla-ansible-deploy-OpenStack.html" >使用 kolla-ansible 部署 OpenStack</a>
         </li>
     
-    </ul></div>
+    </div>
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
         <span class="sidebar-tag-name" data-tags="Vim"><span class="iconfont-archer">&#xe606;</span>Vim</span>
-    
-        <span class="sidebar-tag-name" data-tags="Geek"><span class="iconfont-archer">&#xe606;</span>Geek</span>
-    
-        <span class="sidebar-tag-name" data-tags="Keyboard"><span class="iconfont-archer">&#xe606;</span>Keyboard</span>
     
         <span class="sidebar-tag-name" data-tags="Cloud"><span class="iconfont-archer">&#xe606;</span>Cloud</span>
     
@@ -870,6 +904,10 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="疑难杂症"><span class="iconfont-archer">&#xe606;</span>疑难杂症</span>
     
+        <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
+    
+        <span class="sidebar-tag-name" data-tags="network"><span class="iconfont-archer">&#xe606;</span>network</span>
+    
         <span class="sidebar-tag-name" data-tags="Kubernetes"><span class="iconfont-archer">&#xe606;</span>Kubernetes</span>
     
         <span class="sidebar-tag-name" data-tags="Vagrant"><span class="iconfont-archer">&#xe606;</span>Vagrant</span>
@@ -879,10 +917,10 @@ top:50vh;
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br>
-    1、请确保node版本大于6.2<br>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
     3、在根目录_config.yml里添加配置：
     <pre style="color: #787878; font-size: 0.6rem;">
 jsonContent:
@@ -909,13 +947,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Geek"><span class="iconfont-archer">&#xe60a;</span>Geek</span>
-    
         <span class="sidebar-category-name" data-categories="Solutions"><span class="iconfont-archer">&#xe60a;</span>Solutions</span>
     
         <span class="sidebar-category-name" data-categories="Develop"><span class="iconfont-archer">&#xe60a;</span>Develop</span>
     
         <span class="sidebar-category-name" data-categories="troubleshoot"><span class="iconfont-archer">&#xe60a;</span>troubleshoot</span>
+    
+        <span class="sidebar-category-name" data-categories="Basic"><span class="iconfont-archer">&#xe60a;</span>Basic</span>
     
         <span class="sidebar-category-name" data-categories="Tools"><span class="iconfont-archer">&#xe60a;</span>Tools</span>
     
