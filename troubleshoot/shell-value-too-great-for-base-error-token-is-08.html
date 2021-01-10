@@ -17,11 +17,25 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Stark-X">
     
-    <meta name="keywords" content="shell, error token is 08, troubleshoot,stark-x,blog,博客,hexo-blog,技术">
+    <meta name="keywords" content="shell, error token is 08, troubleshoot,hexo,stark-x,blog,博客,hexo-blog">
     
     <meta name="description" content="">
+    <meta name="description" content="在 shell 脚本编写时，有时候需要进行数学运算（例子🌰：$((1 + 1))），特殊情况下，输入的数字是带着 0 前序的，当对这个带着 0 前序的数字进行数学运算时，计算结果会与预想中的不一致，或者直接报错，错误信息如value too great for base (error token is &quot;02&quot;) 那是因为 bash 执行 shell script 时，0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell - value too great for base (error token is &quot;08&quot;)">
+<meta property="og:url" content="https://blog.stark-x.cn/troubleshoot/shell-value-too-great-for-base-error-token-is-08.html">
+<meta property="og:site_name" content="Stark-X&#39;s Blog">
+<meta property="og:description" content="在 shell 脚本编写时，有时候需要进行数学运算（例子🌰：$((1 + 1))），特殊情况下，输入的数字是带着 0 前序的，当对这个带着 0 前序的数字进行数学运算时，计算结果会与预想中的不一致，或者直接报错，错误信息如value too great for base (error token is &quot;02&quot;) 那是因为 bash 执行 shell script 时，0">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-06T15:39:54.000Z">
+<meta property="article:modified_time" content="2020-03-06T15:56:16.910Z">
+<meta property="article:author" content="Stark-X">
+<meta property="article:tag" content="shell">
+<meta property="article:tag" content="疑难杂症">
+<meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    
     <title>shell - value too great for base (error token is &#34;08&#34;) · Stark-X&#39;s Blog</title>
     <style type="text/css">
     @font-face {
@@ -201,7 +215,7 @@
             var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
 
             var algolia = {
-                applicationID: 'K1YQXDVE38',
+                appId: 'K1YQXDVE38',
                 apiKey: 'c6406e3722b79ee948199cfde68931e8',
                 indexName: 'my-hexo-blog',
                 hits: hits,
@@ -236,7 +250,7 @@
         ga('send', 'pageview');
     </script>
     
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Stark-X's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Stark-X's Blog" type="application/atom+xml">
 </head>
 
     
@@ -447,12 +461,12 @@ height:50vh;
 <a id="more"></a>
 <h2 id="例子-🌰">例子 🌰</h2>
 <p>有如下 crontab 定时任务，在每隔一个周日的凌晨 3 点钟执行脚本 /backup/backup.sh，编写的 crontab 内容如下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># crontab</span></span><br><span class="line">0 3 * * 7 [ $(($(date +%U) % 2)) -eq 0 ] &amp;&amp; sh /bakcup/backup.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># crontab</span></span><br><span class="line">0 3 * * 7 [ $(($(date +%U) % <span class="number">2</span>)) -eq 0 ] &amp;&amp; sh /bakcup/backup.sh</span><br></pre></td></tr></table></figure>
 <p><code>[ $(($(date +%U) % 2)) -eq 0 ]</code> 表示获取当前的周序号（以周日作为第一天的周），把结果模 2，余数是否等于 0，以此判定是否为偶数周，如果是，则执行“&amp;&amp;”后面的命令。</p>
 <p>如果把 zsh 作为 shell，在测试这一条命令时，或者刚好当前的周是双位数，则不会报错，也就不会发现这个问题，直到最多长达 40+ 周之后，才会在第二年的开头发现定时任务无法正常执行。</p>
 <h2 id="解决办法">解决办法</h2>
 <p>在数字前面加上 <code>10#</code>，显式地把该数字标记为十进制，上述的 crontab 改为如下版本即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 3 * * 7 [ $((10<span class="comment">#$(date +%U) % 2)) -eq 0 ] &amp;&amp; sh /bakcup/backup.sh</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 3 * * 7 [ $((<span class="number">10</span>#$(date +%U) % <span class="number">2</span>)) -eq 0 ] &amp;&amp; sh /bakcup/backup.sh</span><br></pre></td></tr></table></figure>
 
     </article>
     <!-- license  -->
@@ -462,7 +476,7 @@ height:50vh;
             <p>原文链接：<a href="https://blog.stark-x.cn/troubleshoot/shell-value-too-great-for-base-error-token-is-08.html">https://blog.stark-x.cn/troubleshoot/shell-value-too-great-for-base-error-token-is-08.html</a>
             <p>发表日期：<a href="https://blog.stark-x.cn/troubleshoot/shell-value-too-great-for-base-error-token-is-08.html">March 6th 2020, 11:39:54 pm</a>
             <p>更新日期：<a href="https://blog.stark-x.cn/troubleshoot/shell-value-too-great-for-base-error-token-is-08.html">March 6th 2020, 11:56:16 pm</a>
-            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
@@ -505,6 +519,10 @@ height:50vh;
 <!-- City版安装代码已完成 -->
     
     
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
     <!-- partial('_partial/comment/changyan') -->
     <!--PC版-->
 
@@ -618,7 +636,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-🌰"><span class="toc-number">1.</span> <span class="toc-text">例子 🌰</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法"><span class="toc-number">2.</span> <span class="toc-text">解决办法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90-%F0%9F%8C%B0"><span class="toc-number">1.</span> <span class="toc-text">例子 🌰</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">解决办法</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -786,19 +804,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Ops"><span class="iconfont-archer">&#xe606;</span>Ops</span>
     
-        <span class="sidebar-tag-name" data-tags="翻译"><span class="iconfont-archer">&#xe606;</span>翻译</span>
+        <span class="sidebar-tag-name" data-tags="Kubernetes"><span class="iconfont-archer">&#xe606;</span>Kubernetes</span>
     
-        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
-    
-        <span class="sidebar-tag-name" data-tags="mock"><span class="iconfont-archer">&#xe606;</span>mock</span>
+        <span class="sidebar-tag-name" data-tags="Vagrant"><span class="iconfont-archer">&#xe606;</span>Vagrant</span>
     
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
         <span class="sidebar-tag-name" data-tags="疑难杂症"><span class="iconfont-archer">&#xe606;</span>疑难杂症</span>
     
-        <span class="sidebar-tag-name" data-tags="Kubernetes"><span class="iconfont-archer">&#xe606;</span>Kubernetes</span>
+        <span class="sidebar-tag-name" data-tags="翻译"><span class="iconfont-archer">&#xe606;</span>翻译</span>
     
-        <span class="sidebar-tag-name" data-tags="Vagrant"><span class="iconfont-archer">&#xe606;</span>Vagrant</span>
+        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
+    
+        <span class="sidebar-tag-name" data-tags="mock"><span class="iconfont-archer">&#xe606;</span>mock</span>
     
         <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
     
@@ -841,9 +859,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Solutions"><span class="iconfont-archer">&#xe60a;</span>Solutions</span>
     
-        <span class="sidebar-category-name" data-categories="Develop"><span class="iconfont-archer">&#xe60a;</span>Develop</span>
-    
         <span class="sidebar-category-name" data-categories="troubleshoot"><span class="iconfont-archer">&#xe60a;</span>troubleshoot</span>
+    
+        <span class="sidebar-category-name" data-categories="Develop"><span class="iconfont-archer">&#xe60a;</span>Develop</span>
     
         <span class="sidebar-category-name" data-categories="Basic"><span class="iconfont-archer">&#xe60a;</span>Basic</span>
     
@@ -907,7 +925,25 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <!-- hexo injector body_end start -->
+  <script>
+  (function(){
+    var time = document.getElementsByClassName('post-intro-time')[0]
+    if (time === undefined) { return; }
+    var post = document.getElementsByTagName("article")[0]
+    if (post === undefined) { return; }
+
+    var pubTime = new Date(time.innerText)
+    var now = Date.now()
+    var interval = parseInt(now - pubTime)
+    var days = parseInt(interval / 86400000)
+    post.innerHTML = '<div class="note note-warning" style="font-size:0.9rem"><p>' +
+      '<div class="title">文章时效性提示</div><p>这是一篇发布于 ' + days + ' 天前的文章，部分信息可能已发生改变，请注意甄别。' +
+      '</p></p></div>' + post.innerHTML;
+
+  })();
+  </script>
+<!-- hexo injector body_end end --></body>
 </html>
 
 

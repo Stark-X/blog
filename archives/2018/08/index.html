@@ -17,11 +17,23 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Stark-X">
     
-    <meta name="keywords" content="stark-x,blog,博客,hexo-blog,技术">
+    <meta name="keywords" content="hexo,stark-x,blog,博客,hexo-blog">
     
     <meta name="description" content="">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Stark-X&#39;s Blog">
+<meta property="og:url" content="https://blog.stark-x.cn/archives/2018/08/index.html">
+<meta property="og:site_name" content="Stark-X&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Stark-X">
+<meta property="article:tag" content="stark">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="技术">
+<meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    
     <title>Stark-X&#39;s Blog</title>
     <style type="text/css">
     @font-face {
@@ -201,7 +213,7 @@
             var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
 
             var algolia = {
-                applicationID: 'K1YQXDVE38',
+                appId: 'K1YQXDVE38',
                 apiKey: 'c6406e3722b79ee948199cfde68931e8',
                 indexName: 'my-hexo-blog',
                 hits: hits,
@@ -236,7 +248,7 @@
         ga('send', 'pageview');
     </script>
     
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Stark-X's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Stark-X's Blog" type="application/atom+xml">
 </head>
 
     
@@ -435,10 +447,10 @@ Vim有一个很合我心意的特性，在使用它的时候，完全不需要�
 <p>此教程在MacOS上完成，在开始前请预留8Gb内存，30G的磁盘空间，因为要下载相关资源文件，最好搭好梯子。</p>
 <h2 id="安装环境">安装环境</h2>
 <ul>
-<li><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">VirtualBox</a></li>
-<li><a href="https://www.vagrantup.com/" target="_blank" rel="noopener">Vagrant</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.vagrantup.com/">Vagrant</a></li>
 </ul>
-<p>MacOS上强烈推荐使用<a href="https://brew.sh/index_zh-cn" target="_blank" rel="noopener">Homebrew</a>, 然后使用命令<code>brew tap caskroom/cask</code>安装cask，安装完毕之后，安装上述两个Application只需要使用<code>brew cask install virtualbox vagrant</code>即可快速完成解压、安装等一系列人手操作。</p>
+<p>MacOS上强烈推荐使用<a target="_blank" rel="noopener" href="https://brew.sh/index_zh-cn">Homebrew</a>, 然后使用命令<code>brew tap caskroom/cask</code>安装cask，安装完毕之后，安装上述两个Application只需要使用<code>brew cask install virtualbox vagrant</code>即可快速完成解压、安装等一系列人手操作。</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -717,19 +729,19 @@ Vim有一个很合我心意的特性，在使用它的时候，完全不需要�
     
         <span class="sidebar-tag-name" data-tags="Ops"><span class="iconfont-archer">&#xe606;</span>Ops</span>
     
-        <span class="sidebar-tag-name" data-tags="翻译"><span class="iconfont-archer">&#xe606;</span>翻译</span>
+        <span class="sidebar-tag-name" data-tags="Kubernetes"><span class="iconfont-archer">&#xe606;</span>Kubernetes</span>
     
-        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
-    
-        <span class="sidebar-tag-name" data-tags="mock"><span class="iconfont-archer">&#xe606;</span>mock</span>
+        <span class="sidebar-tag-name" data-tags="Vagrant"><span class="iconfont-archer">&#xe606;</span>Vagrant</span>
     
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
         <span class="sidebar-tag-name" data-tags="疑难杂症"><span class="iconfont-archer">&#xe606;</span>疑难杂症</span>
     
-        <span class="sidebar-tag-name" data-tags="Kubernetes"><span class="iconfont-archer">&#xe606;</span>Kubernetes</span>
+        <span class="sidebar-tag-name" data-tags="翻译"><span class="iconfont-archer">&#xe606;</span>翻译</span>
     
-        <span class="sidebar-tag-name" data-tags="Vagrant"><span class="iconfont-archer">&#xe606;</span>Vagrant</span>
+        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
+    
+        <span class="sidebar-tag-name" data-tags="mock"><span class="iconfont-archer">&#xe606;</span>mock</span>
     
         <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
     
@@ -772,9 +784,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Solutions"><span class="iconfont-archer">&#xe60a;</span>Solutions</span>
     
-        <span class="sidebar-category-name" data-categories="Develop"><span class="iconfont-archer">&#xe60a;</span>Develop</span>
-    
         <span class="sidebar-category-name" data-categories="troubleshoot"><span class="iconfont-archer">&#xe60a;</span>troubleshoot</span>
+    
+        <span class="sidebar-category-name" data-categories="Develop"><span class="iconfont-archer">&#xe60a;</span>Develop</span>
     
         <span class="sidebar-category-name" data-categories="Basic"><span class="iconfont-archer">&#xe60a;</span>Basic</span>
     

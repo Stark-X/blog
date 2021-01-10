@@ -17,11 +17,33 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Stark-X">
     
-    <meta name="keywords" content="http/2,network,基础知识,stark-x,blog,博客,hexo-blog,技术">
+    <meta name="keywords" content="http/2,network,基础知识,hexo,stark-x,blog,博客,hexo-blog">
     
     <meta name="description" content="">
+    <meta name="description" content="HTTP&#x2F;2（曾用名：HTTP&#x2F;2.0[1]），改进的目标是使得应用更快，更简单，更稳定，它把以前针对 HTTP&#x2F;1.1 作出的优化方案内置于[[TCP 协议#传输层]]中，使得进行更多的优化成为可能。 HTTP&#x2F;2 的主要改进方向是通过支持请求、响应复用以减少延迟。为了减少协议开销，引入了“二进制分帧层”，增加了对请求的优先级和服务器推送的支持。 HTTP&#x2F;2 没有对 HTTP&#x2F;1.1 的概">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP&#x2F;2">
+<meta property="og:url" content="https://blog.stark-x.cn/Basic/http-2-0.html">
+<meta property="og:site_name" content="Stark-X&#39;s Blog">
+<meta property="og:description" content="HTTP&#x2F;2（曾用名：HTTP&#x2F;2.0[1]），改进的目标是使得应用更快，更简单，更稳定，它把以前针对 HTTP&#x2F;1.1 作出的优化方案内置于[[TCP 协议#传输层]]中，使得进行更多的优化成为可能。 HTTP&#x2F;2 的主要改进方向是通过支持请求、响应复用以减少延迟。为了减少协议开销，引入了“二进制分帧层”，增加了对请求的优先级和服务器推送的支持。 HTTP&#x2F;2 没有对 HTTP&#x2F;1.1 的概">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img-cdn.xjztest.com/binary_frame.png.png">
+<meta property="og:image" content="http://img-cdn.xjztest.com/http2_frame_stream_message.png.png">
+<meta property="og:image" content="http://img-cdn.xjztest.com/http2_connecting.png.png">
+<meta property="og:image" content="http://img-cdn.xjztest.com/http2_multiplexing.png.png">
+<meta property="og:image" content="http://img-cdn.xjztest.com/http2_priority_tree.png.png">
+<meta property="og:image" content="http://img-cdn.xjztest.com/http2_server_push.png.png">
+<meta property="og:image" content="http://img-cdn.xjztest.com/http2_headers_hpack.png.png">
+<meta property="article:published_time" content="2020-07-03T10:00:58.000Z">
+<meta property="article:modified_time" content="2020-07-04T14:57:58.794Z">
+<meta property="article:author" content="Stark-X">
+<meta property="article:tag" content="http">
+<meta property="article:tag" content="network">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img-cdn.xjztest.com/binary_frame.png.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    
     <title>HTTP/2 · Stark-X&#39;s Blog</title>
     <style type="text/css">
     @font-face {
@@ -201,7 +223,7 @@
             var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
 
             var algolia = {
-                applicationID: 'K1YQXDVE38',
+                appId: 'K1YQXDVE38',
                 apiKey: 'c6406e3722b79ee948199cfde68931e8',
                 indexName: 'my-hexo-blog',
                 hits: hits,
@@ -236,7 +258,7 @@
         ga('send', 'pageview');
     </script>
     
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Stark-X's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Stark-X's Blog" type="application/atom+xml">
 </head>
 
     
@@ -588,13 +610,13 @@ height:50vh;
 <p>客户端会发送一个特殊字节流 <code>Connection Preface</code> 作为第一个数据。<code>Connection Preface</code> 是一个纯文本的数据：<code>0x505249202a20485454502f322e300d0a0d0a534d0d0a0d0a </code>，解析为 [[ASCII 编码]]：<code>PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n</code>。这是 HTTP/1.x 的格式，PRI 是请求方法，如果不支持 HTTP/2，则服务端会返回方法错误；而支持 HTTP/2 的服务端会返回一个<code>SETTING</code>帧来回应紧接着 <code>Connection Preface</code> 的来自于客户端的<code>SETTING</code>帧，以表明自己支持 HTTP/2，这样客户端就知道服务端支不支持 HTTP/2 了。</p>
 <h2 id="参考资料">参考资料</h2>
 <ul>
-<li>Google - HTTP/2 简介： <a href="https://developers.google.com/web/fundamentals/performance/http2?hl=zh-cn" target="_blank" rel="noopener">https://developers.google.com/web/fundamentals/performance/http2?hl=zh-cn</a></li>
-<li><a href="https://juejin.im/post/5da16e9ef265da5b76373d0e" target="_blank" rel="noopener">https://juejin.im/post/5da16e9ef265da5b76373d0e</a></li>
+<li>Google - HTTP/2 简介： <a target="_blank" rel="noopener" href="https://developers.google.com/web/fundamentals/performance/http2?hl=zh-cn">https://developers.google.com/web/fundamentals/performance/http2?hl=zh-cn</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5da16e9ef265da5b76373d0e">https://juejin.im/post/5da16e9ef265da5b76373d0e</a></li>
 </ul>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><em>HTTP/2.0</em>：根据 <a href="https://en.wikipedia.org/wiki/HTTP/2#Development_milestones" target="_blank" rel="noopener">wikipedia</a> 的记录，HTTP/2 在 2012 年初，曾用 HTTP/2.0 作为名字，在 2015 年 1 月之后，正式命名为 HTTP/2。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p><em>HTTP/2.0</em>：根据 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/HTTP/2#Development_milestones">wikipedia</a> 的记录，HTTP/2 在 2012 年初，曾用 HTTP/2.0 作为名字，在 2015 年 1 月之后，正式命名为 HTTP/2。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn2" class="footnote-item"><p>一个要求按顺序传送数据的队列的第一个数据包（队头）受阻而导致后续的所有数据包受阻。一种解决办法是，使用虚拟的输出队列。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
@@ -617,7 +639,7 @@ height:50vh;
             <p>原文链接：<a href="https://blog.stark-x.cn/Basic/http-2-0.html">https://blog.stark-x.cn/Basic/http-2-0.html</a>
             <p>发表日期：<a href="https://blog.stark-x.cn/Basic/http-2-0.html">July 3rd 2020, 6:00:58 pm</a>
             <p>更新日期：<a href="https://blog.stark-x.cn/Basic/http-2-0.html">July 4th 2020, 10:57:58 pm</a>
-            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
@@ -655,6 +677,10 @@ height:50vh;
 <!-- City版安装代码已完成 -->
     
     
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
     <!-- partial('_partial/comment/changyan') -->
     <!--PC版-->
 
@@ -768,7 +794,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SPDY-与-HTTP-2"><span class="toc-number">1.</span> <span class="toc-text">SPDY 与 HTTP&#x2F;2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-2-的设计"><span class="toc-number">2.</span> <span class="toc-text">HTTP&#x2F;2 的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二进制分帧层"><span class="toc-number">2.1.</span> <span class="toc-text">二进制分帧层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据流、消息、帧"><span class="toc-number">2.2.</span> <span class="toc-text">数据流、消息、帧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#帧的结构"><span class="toc-number">2.2.1.</span> <span class="toc-text">帧的结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求-响应-复用"><span class="toc-number">2.3.</span> <span class="toc-text">请求&#x2F;响应 复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据流优先级"><span class="toc-number">2.4.</span> <span class="toc-text">数据流优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个源（Origin）一个连接"><span class="toc-number">2.5.</span> <span class="toc-text">一个源（Origin）一个连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流控制"><span class="toc-number">2.6.</span> <span class="toc-text">流控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器推送"><span class="toc-number">2.7.</span> <span class="toc-text">服务器推送</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PUSH-PROMISE-101"><span class="toc-number">2.7.1.</span> <span class="toc-text">PUSH_PROMISE 101</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标头（Header）压缩"><span class="toc-number">2.8.</span> <span class="toc-text">标头（Header）压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#确认服务器支持-HTTP-2"><span class="toc-number">2.9.</span> <span class="toc-text">确认服务器支持 HTTP&#x2F;2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#协议发现"><span class="toc-number">2.9.1.</span> <span class="toc-text">协议发现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Double-Confirm"><span class="toc-number">2.9.2.</span> <span class="toc-text">Double Confirm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SPDY-%E4%B8%8E-HTTP-2"><span class="toc-number">1.</span> <span class="toc-text">SPDY 与 HTTP&#x2F;2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-2-%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">HTTP&#x2F;2 的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%88%86%E5%B8%A7%E5%B1%82"><span class="toc-number">2.1.</span> <span class="toc-text">二进制分帧层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E3%80%81%E6%B6%88%E6%81%AF%E3%80%81%E5%B8%A7"><span class="toc-number">2.2.</span> <span class="toc-text">数据流、消息、帧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A7%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">2.2.1.</span> <span class="toc-text">帧的结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82-%E5%93%8D%E5%BA%94-%E5%A4%8D%E7%94%A8"><span class="toc-number">2.3.</span> <span class="toc-text">请求&#x2F;响应 复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">2.4.</span> <span class="toc-text">数据流优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%BA%90%EF%BC%88Origin%EF%BC%89%E4%B8%80%E4%B8%AA%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.5.</span> <span class="toc-text">一个源（Origin）一个连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E6%8E%A7%E5%88%B6"><span class="toc-number">2.6.</span> <span class="toc-text">流控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%A8%E9%80%81"><span class="toc-number">2.7.</span> <span class="toc-text">服务器推送</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PUSH-PROMISE-101"><span class="toc-number">2.7.1.</span> <span class="toc-text">PUSH_PROMISE 101</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%A4%B4%EF%BC%88Header%EF%BC%89%E5%8E%8B%E7%BC%A9"><span class="toc-number">2.8.</span> <span class="toc-text">标头（Header）压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E8%AE%A4%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%94%AF%E6%8C%81-HTTP-2"><span class="toc-number">2.9.</span> <span class="toc-text">确认服务器支持 HTTP&#x2F;2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E5%8F%91%E7%8E%B0"><span class="toc-number">2.9.1.</span> <span class="toc-text">协议发现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Double-Confirm"><span class="toc-number">2.9.2.</span> <span class="toc-text">Double Confirm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -936,19 +962,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Ops"><span class="iconfont-archer">&#xe606;</span>Ops</span>
     
-        <span class="sidebar-tag-name" data-tags="翻译"><span class="iconfont-archer">&#xe606;</span>翻译</span>
+        <span class="sidebar-tag-name" data-tags="Kubernetes"><span class="iconfont-archer">&#xe606;</span>Kubernetes</span>
     
-        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
-    
-        <span class="sidebar-tag-name" data-tags="mock"><span class="iconfont-archer">&#xe606;</span>mock</span>
+        <span class="sidebar-tag-name" data-tags="Vagrant"><span class="iconfont-archer">&#xe606;</span>Vagrant</span>
     
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
         <span class="sidebar-tag-name" data-tags="疑难杂症"><span class="iconfont-archer">&#xe606;</span>疑难杂症</span>
     
-        <span class="sidebar-tag-name" data-tags="Kubernetes"><span class="iconfont-archer">&#xe606;</span>Kubernetes</span>
+        <span class="sidebar-tag-name" data-tags="翻译"><span class="iconfont-archer">&#xe606;</span>翻译</span>
     
-        <span class="sidebar-tag-name" data-tags="Vagrant"><span class="iconfont-archer">&#xe606;</span>Vagrant</span>
+        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
+    
+        <span class="sidebar-tag-name" data-tags="mock"><span class="iconfont-archer">&#xe606;</span>mock</span>
     
         <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
     
@@ -991,9 +1017,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Solutions"><span class="iconfont-archer">&#xe60a;</span>Solutions</span>
     
-        <span class="sidebar-category-name" data-categories="Develop"><span class="iconfont-archer">&#xe60a;</span>Develop</span>
-    
         <span class="sidebar-category-name" data-categories="troubleshoot"><span class="iconfont-archer">&#xe60a;</span>troubleshoot</span>
+    
+        <span class="sidebar-category-name" data-categories="Develop"><span class="iconfont-archer">&#xe60a;</span>Develop</span>
     
         <span class="sidebar-category-name" data-categories="Basic"><span class="iconfont-archer">&#xe60a;</span>Basic</span>
     
@@ -1057,7 +1083,25 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <!-- hexo injector body_end start -->
+  <script>
+  (function(){
+    var time = document.getElementsByClassName('post-intro-time')[0]
+    if (time === undefined) { return; }
+    var post = document.getElementsByTagName("article")[0]
+    if (post === undefined) { return; }
+
+    var pubTime = new Date(time.innerText)
+    var now = Date.now()
+    var interval = parseInt(now - pubTime)
+    var days = parseInt(interval / 86400000)
+    post.innerHTML = '<div class="note note-warning" style="font-size:0.9rem"><p>' +
+      '<div class="title">文章时效性提示</div><p>这是一篇发布于 ' + days + ' 天前的文章，部分信息可能已发生改变，请注意甄别。' +
+      '</p></p></div>' + post.innerHTML;
+
+  })();
+  </script>
+<!-- hexo injector body_end end --></body>
 </html>
 
 
