@@ -17,7 +17,7 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Stark-X">
     
-    <meta name="keywords" content="shell, error token is 08, troubleshoot,hexo,stark-x,blog,博客,hexo-blog">
+    <meta name="keywords" content="shell, error token is 08, troubleshoot,hexo,hexo-theme,hexo-blog,stark-x,blog,博客">
     
     <meta name="description" content="">
     <meta name="description" content="在 shell 脚本编写时，有时候需要进行数学运算（例子🌰：$((1 + 1))），特殊情况下，输入的数字是带着 0 前序的，当对这个带着 0 前序的数字进行数学运算时，计算结果会与预想中的不一致，或者直接报错，错误信息如value too great for base (error token is &quot;02&quot;) 那是因为 bash 执行 shell script 时，0">
@@ -89,8 +89,8 @@
 
 </style>
 
-    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    <link rel="preload" href= "/css/style.css?v=20210203" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20210203" media="(max-width: 980px)">
     
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
@@ -204,7 +204,7 @@
     <link rel="icon" href= "/assets/favicon.ico" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
-    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" href="/scripts/main.js?v=20210203" as="script" />
     <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
     <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
     <script src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.2/js/all.min.js"  data-auto-replace-svg="nest" ></script>
@@ -532,7 +532,31 @@ height:50vh;
     
 
     <!-- 评论 -->
+
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <script>
+      (function(){
+        var time = document.getElementsByClassName('post-intro-time')[0]
+        if (time === undefined) { return; }
+        var post = document.getElementsByTagName("article")[0]
+        if (post === undefined) { return; }
+
+        var pubTime = new Date(time.innerText)
+        var now = Date.now()
+        var interval = parseInt(now - pubTime)
+        var days = parseInt(interval / 86400000)
+        var outdated_threshold = parseInt(180)
+        if (interval > outdated_threshold*24*3600*1000){
+          post.innerHTML = '<div class="note note-warning" style="font-size:0.9rem"><p>' +
+            '<div class="title">文章时效性提示</div><p>这是一篇发布于 ' + days + ' 天前的文章，部分信息可能已发生改变，请注意甄别。' +
+            '</p></p></div>' + post.innerHTML;
+        }
+      })();
+  </script>
+  
 </main>
+
             <!-- profile -->
             
         </div>
@@ -717,8 +741,6 @@ top:50vh;
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 7
@@ -797,33 +819,33 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="Vim"><span class="iconfont-archer">&#xe606;</span>Vim</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cloud"><span class="iconfont-archer">&#xe606;</span>Cloud</span>
+    
+        <span class="sidebar-tag-name" data-tags="OpenStack"><span class="iconfont-archer">&#xe606;</span>OpenStack</span>
+    
+        <span class="sidebar-tag-name" data-tags="Ops"><span class="iconfont-archer">&#xe606;</span>Ops</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kubernetes"><span class="iconfont-archer">&#xe606;</span>Kubernetes</span>
+    
+        <span class="sidebar-tag-name" data-tags="Vagrant"><span class="iconfont-archer">&#xe606;</span>Vagrant</span>
+    
         <span class="sidebar-tag-name" data-tags="翻译"><span class="iconfont-archer">&#xe606;</span>翻译</span>
     
         <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
     
         <span class="sidebar-tag-name" data-tags="mock"><span class="iconfont-archer">&#xe606;</span>mock</span>
     
-        <span class="sidebar-tag-name" data-tags="Kubernetes"><span class="iconfont-archer">&#xe606;</span>Kubernetes</span>
-    
-        <span class="sidebar-tag-name" data-tags="Vagrant"><span class="iconfont-archer">&#xe606;</span>Vagrant</span>
-    
-        <span class="sidebar-tag-name" data-tags="Ops"><span class="iconfont-archer">&#xe606;</span>Ops</span>
-    
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
         <span class="sidebar-tag-name" data-tags="疑难杂症"><span class="iconfont-archer">&#xe606;</span>疑难杂症</span>
     
-        <span class="sidebar-tag-name" data-tags="Cloud"><span class="iconfont-archer">&#xe606;</span>Cloud</span>
-    
-        <span class="sidebar-tag-name" data-tags="OpenStack"><span class="iconfont-archer">&#xe606;</span>OpenStack</span>
-    
-        <span class="sidebar-tag-name" data-tags="Vim"><span class="iconfont-archer">&#xe606;</span>Vim</span>
-    
-        <span class="sidebar-tag-name" data-tags="Coding"><span class="iconfont-archer">&#xe606;</span>Coding</span>
-    
         <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
     
         <span class="sidebar-tag-name" data-tags="network"><span class="iconfont-archer">&#xe606;</span>network</span>
+    
+        <span class="sidebar-tag-name" data-tags="Coding"><span class="iconfont-archer">&#xe606;</span>Coding</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -858,15 +880,15 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Develop"><span class="iconfont-archer">&#xe60a;</span>Develop</span>
-    
         <span class="sidebar-category-name" data-categories="Solutions"><span class="iconfont-archer">&#xe60a;</span>Solutions</span>
+    
+        <span class="sidebar-category-name" data-categories="Develop"><span class="iconfont-archer">&#xe60a;</span>Develop</span>
     
         <span class="sidebar-category-name" data-categories="troubleshoot"><span class="iconfont-archer">&#xe60a;</span>troubleshoot</span>
     
-        <span class="sidebar-category-name" data-categories="Tools"><span class="iconfont-archer">&#xe60a;</span>Tools</span>
-    
         <span class="sidebar-category-name" data-categories="Basic"><span class="iconfont-archer">&#xe60a;</span>Basic</span>
+    
+        <span class="sidebar-category-name" data-categories="Tools"><span class="iconfont-archer">&#xe60a;</span>Tools</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
@@ -928,26 +950,7 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    <!-- hexo injector body_end start -->
-  <script>
-  (function(){
-    var time = document.getElementsByClassName('post-intro-time')[0]
-    if (time === undefined) { return; }
-    var post = document.getElementsByTagName("article")[0]
-    if (post === undefined) { return; }
-
-    var pubTime = new Date(time.innerText)
-    var now = Date.now()
-    var interval = parseInt(now - pubTime)
-    var days = parseInt(interval / 86400000)
-    if (interval > 3600*24*30*3*1000){
-      post.innerHTML = '<div class="note note-warning" style="font-size:0.9rem"><p>' +
-        '<div class="title">文章时效性提示</div><p>这是一篇发布于 ' + days + ' 天前的文章，部分信息可能已发生改变，请注意甄别。' +
-        '</p></p></div>' + post.innerHTML;
-    }
-  })();
-  </script>
-<!-- hexo injector body_end end --></body>
+    </body>
 </html>
 
 
